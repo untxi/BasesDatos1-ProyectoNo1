@@ -1,0 +1,188 @@
+<html>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    
+<head>
+	<title>
+			Cor Bessó
+	</title>
+	
+	<font face="avenida" size=14>Formulario de Perfil</font>
+
+</head>
+
+<body>
+	<form id="Formulario" action="crear_perfil.php" method="post">
+		<TABLE>
+			<font face="verdana" size=5 align="center"><br>Información Personal</font>
+			<TR>
+				<!--INFORMACION PERSONAL-->
+				
+				<TD>
+					<font face="verdana" size=5>Nombre</font>
+				</TD>
+				
+				<TD>
+				<INPUT type=text name="nombre">
+				</TD>
+			</TR>
+
+			<TR>
+				<TD>
+					<font face="verdana" size=5>1er Apellido</font>
+				</TD>
+				
+				<TD>
+					<INPUT type=text name="apellido1">
+				</TD>
+			</TR>
+
+			<TR>
+				<TD>
+					<font face="verdana" size=5>2do Apellido</font>
+				</TD>
+				
+				<TD>
+				<INPUT type=text name="apellido2">
+				</TD>
+			</TR>
+
+			<TR>
+				<TD>
+					<font face="verdana" size=5>Fecha de Nacimiento</font>
+				</TD>
+				<TD>
+					<SELECT name="dia">
+						<OPTION VALUE=1>1</OPTION>
+						<OPTION VALUE=2>2</OPTION>
+						<OPTION VALUE=3>3</OPTION>
+						<OPTION VALUE=4>4</OPTION>
+						<OPTION VALUE=5>5</OPTION>
+						<OPTION VALUE=6>6</OPTION>
+						<OPTION VALUE=7>7</OPTION>
+						<OPTION VALUE=8>8</OPTION>
+						<OPTION VALUE=9>9</OPTION>
+						<OPTION VALUE=10>10</OPTION>
+						<OPTION VALUE=11>11</OPTION>
+						<OPTION VALUE=12>12</OPTION>
+						<OPTION VALUE=13>13</OPTION>
+						<OPTION VALUE=14>14</OPTION>
+						<OPTION VALUE=15>15</OPTION>
+						<OPTION VALUE=16>16</OPTION>
+						<OPTION VALUE=17>17</OPTION>
+						<OPTION VALUE=18>18</OPTION>
+						<OPTION VALUE=19>19</OPTION>
+						<OPTION VALUE=20>20</OPTION>
+						<OPTION VALUE=21>21</OPTION>
+						<OPTION VALUE=22>22</OPTION>
+						<OPTION VALUE=23>23</OPTION>
+						<OPTION VALUE=24>24</OPTION>
+						<OPTION VALUE=25>25</OPTION>
+						<OPTION VALUE=26>26</OPTION>
+						<OPTION VALUE=27>27</OPTION>
+						<OPTION VALUE=28>28</OPTION>
+						<OPTION VALUE=29>29</OPTION>
+						<OPTION VALUE=30>30</OPTION>
+						<OPTION VALUE=31>31</OPTION>
+						
+
+					</SELECT>
+					<SELECT name="mes">
+						<OPTION VALUE="Enero">Enero</OPTION>
+						<OPTION VALUE="Febrero">Febrero</OPTION>
+						<OPTION VALUE="Marzo">Marzo</OPTION>
+						<OPTION VALUE="Abril">Abril</OPTION>
+						<OPTION VALUE="Mayo">Mayo</OPTION>
+						<OPTION VALUE="Junio">Junio</OPTION>
+						<OPTION VALUE="Julio">Julio</OPTION>
+						<OPTION VALUE="Agosto">Agosto</OPTION>
+						<OPTION VALUE="Setiembre">Setiembre</OPTION>
+						<OPTION VALUE="OCtubre">OCtubre</OPTION>
+						<OPTION VALUE="Noviembre">Noviembre</OPTION>
+						<OPTION VALUE="Diciembre">Diciembre</OPTION>
+					</SELECT>
+					<SELECT name="año">
+						
+						<OPTION VALUE=1980>1980</OPTION>
+						<OPTION VALUE=1981>1981</OPTION>
+						<OPTION VALUE=1982>1982</OPTION>
+						<OPTION VALUE=1983>1983</OPTION>
+						<OPTION VALUE=1984>1984</OPTION>
+						<OPTION VALUE=1985>1985</OPTION>
+						<OPTION VALUE=1986>1986</OPTION>
+						<OPTION VALUE=1987>1987</OPTION>
+						<OPTION VALUE=1988>1988</OPTION>
+						<OPTION VALUE=1989>1989</OPTION>
+						<OPTION VALUE=1990>1990</OPTION>
+						<OPTION VALUE=1991>1991</OPTION>
+						<OPTION VALUE=1992>1992</OPTION>
+						<OPTION VALUE=1993>1993</OPTION>
+						<OPTION VALUE=1994>1994</OPTION>
+						<OPTION VALUE=1995>1995</OPTION>
+						<OPTION VALUE=1996>1996</OPTION>
+					</SELECT>
+				</TD>
+				
+			</TR>
+			<TR>
+				<TD>
+					<font face="verdana" size=5>Género</font>
+				</TD>
+				<TD>
+					<font face="verdana" size=5>
+						Masculino:
+					</font>
+					<INPUT type=radio name="género" value="M">
+					<br>
+					<font face="verdana" size=5>
+						Femenino:
+					</font>
+					<INPUT type=radio name="género" value="F">
+				</TD>
+			</TR>
+
+			<TR>
+				<TD>
+					<font face="verdana" size=5>
+						Ocupación
+					</font>
+				</TD>
+				<TD>
+				<SELECT name="ocupacion">
+					<OPTION VALUE="profesor">
+						<font face="verdana" size=5>Profesor</font>
+					</OPTION>
+					<OPTION VALUE="estudiante">
+						<font face="verdana" size=5>estudiante</font>
+					</OPTION>
+					<OPTION VALUE="ingeniero">
+						<font face="verdana" size=5>ingeniero</font>
+					</OPTION>
+					<OPTION VALUE="pensionado">
+						<font face="verdana" size=5>pensionado</font>
+					</OPTION>
+					<OPTION VALUE="otro">
+						<font face="verdana" size=5>otro</font>
+					</OPTION>
+				</SELECT>
+				</TD>
+			</TR>
+			
+			<TR>
+				<TD>
+					<font face="verdana" size=5>Frase</font>
+				</TD>
+				<TD>
+					<TEXTAREA rows="3" name="comentarios">Para cada estrella hay quien la miré</TEXTAREA>
+				</TD>
+			</TR>
+
+			<TR>
+				<TD COLSPAN=2>
+				<INPUT type="submit" value=" Crear ">
+				</TD>
+			</TR>
+		</TABLE>
+</form>
+</body>
+</html>
