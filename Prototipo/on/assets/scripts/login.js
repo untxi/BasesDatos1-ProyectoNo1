@@ -19,10 +19,10 @@ var Login = function () {
 
 	            messages: {
 	                username: {
-	                    required: "Username is required1."
+	                    required: "Email es requerido."
 	                },
 	                password: {
-	                    required: "Password is required2."
+	                    required: "Contraseña es requerida."
 	                }
 	            },
 
@@ -74,7 +74,7 @@ var Login = function () {
 
 	            messages: {
 	                email: {
-	                    required: "Email is required."
+	                    required: "Email es requerido."
 	                }
 	            },
 
@@ -188,7 +188,7 @@ var Login = function () {
 
 	            messages: { // custom messages for radio buttons and checkboxes
 	                tnc: {
-	                    required: "Please accept TNC first."
+	                    required: "Por favor acepte primero."
 	                }
 	            },
 
