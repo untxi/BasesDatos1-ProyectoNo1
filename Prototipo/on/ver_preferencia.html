@@ -9,13 +9,19 @@
 		
 		<blockquote> 
 				<blockquote>
-					<font face="avenida" size=14>Crear de Perfil</font>
+					<font face="avenida" size=14>Preferencia</font>
 				</blockquote>
 		</blockquote>
+		<div align="right">
+			<a href="frame_editar_preferencia.html" target="_parent" class="image icon fa-check">
+				<img src="images/loading.gif" width="20" height="20" alt="" />
+				<font face="verdana" size=5><b>EDITAR</b></font>
+			</a>
+		</div>
 		
 	</head>
 
-	<body background="images/pic3.jpeg">
+	<body>
 		<div>
 			<form id="Formulario" action="crear_perfil.php" method="post">
 			<TABLE align="center">
@@ -25,111 +31,19 @@
 					<font face="verdana" size=5 align="center"><br>Información General</font>
 				</th>	
 				
-				<TR>			
-					<TD>
-						<font face="verdana" size=5>Nombre</font>
-					</TD>
-					
-					<TD>
-						<INPUT type=text name="nombre">
-					</TD>
-				</TR>
-
 				<TR>
 					<TD>
-						<font face="verdana" size=5>1er Apellido</font>
+						<font face="verdana" size=5>Edad</font>
 					</TD>
-					
-					<TD>
-						<INPUT type=text name="apellido1">
-					</TD>
-				</TR>
+					<TD>					
+						<SELECT name="rango" style="font-size:12pt">
+							<OPTION VALUE="18 a 21"><font face="verdana" size=5>18 a 21</font></OPTION>
+							<OPTION VALUE="22 a 25"><font face="verdana" size=5>22 a 25</font></OPTION>
+							<OPTION VALUE="26 a 28"><font face="verdana" size=5>26 a 28</font></OPTION>
+							<OPTION VALUE="29 a 32"><font face="verdana" size=5>29 a 32</font></OPTION>
+							<OPTION VALUE="32 a 35"><font face="verdana" size=5>32 a 35</font></OPTION>
+							<OPTION VALUE="más de 35"><font face="verdana" size=5>más de 35</font></OPTION>
 
-				<TR>
-					<TD>
-						<font face="verdana" size=5>2do Apellido</font>
-					</TD>
-					
-					<TD>
-					<INPUT type=text name="apellido2">
-					</TD>
-				</TR>
-
-				<TR>
-					<TD>
-						<font face="verdana" size=5>Fecha de Nacimiento</font>
-					</TD>
-					<TD>
-						<SELECT name="dia" style="font-size:12pt">
-							<OPTION VALUE=1>1</OPTION>
-							<OPTION VALUE=2>2</OPTION>
-							<OPTION VALUE=3>3</OPTION>
-							<OPTION VALUE=4>4</OPTION>
-							<OPTION VALUE=5>5</OPTION>
-							<OPTION VALUE=6>6</OPTION>
-							<OPTION VALUE=7>7</OPTION>
-							<OPTION VALUE=8>8</OPTION>
-							<OPTION VALUE=9>9</OPTION>
-							<OPTION VALUE=10>10</OPTION>
-							<OPTION VALUE=11>11</OPTION>
-							<OPTION VALUE=12>12</OPTION>
-							<OPTION VALUE=13>13</OPTION>
-							<OPTION VALUE=14>14</OPTION>
-							<OPTION VALUE=15>15</OPTION>
-							<OPTION VALUE=16>16</OPTION>
-							<OPTION VALUE=17>17</OPTION>
-							<OPTION VALUE=18>18</OPTION>
-							<OPTION VALUE=19>19</OPTION>
-							<OPTION VALUE=20>20</OPTION>
-							<OPTION VALUE=21>21</OPTION>
-							<OPTION VALUE=22>22</OPTION>
-							<OPTION VALUE=23>23</OPTION>
-							<OPTION VALUE=24>24</OPTION>
-							<OPTION VALUE=25>25</OPTION>
-							<OPTION VALUE=26>26</OPTION>
-							<OPTION VALUE=27>27</OPTION>
-							<OPTION VALUE=28>28</OPTION>
-							<OPTION VALUE=29>29</OPTION>
-							<OPTION VALUE=30>30</OPTION>
-							<OPTION VALUE=31>31</OPTION>
-							
-
-						</SELECT>
-						
-						<SELECT name="mes" style="font-size:12pt">
-							<OPTION VALUE="Enero">Enero</OPTION>
-							<OPTION VALUE="Febrero">Febrero</OPTION>
-							<OPTION VALUE="Marzo">Marzo</OPTION>
-							<OPTION VALUE="Abril">Abril</OPTION>
-							<OPTION VALUE="Mayo">Mayo</OPTION>
-							<OPTION VALUE="Junio">Junio</OPTION>
-							<OPTION VALUE="Julio">Julio</OPTION>
-							<OPTION VALUE="Agosto">Agosto</OPTION>
-							<OPTION VALUE="Setiembre">Setiembre</OPTION>
-							<OPTION VALUE="OCtubre">OCtubre</OPTION>
-							<OPTION VALUE="Noviembre">Noviembre</OPTION>
-							<OPTION VALUE="Diciembre">Diciembre</OPTION>
-						</SELECT>
-						
-						<SELECT name="año" style="font-size:12pt">
-							
-							<OPTION VALUE=1980>1980</OPTION>
-							<OPTION VALUE=1981>1981</OPTION>
-							<OPTION VALUE=1982>1982</OPTION>
-							<OPTION VALUE=1983>1983</OPTION>
-							<OPTION VALUE=1984>1984</OPTION>
-							<OPTION VALUE=1985>1985</OPTION>
-							<OPTION VALUE=1986>1986</OPTION>
-							<OPTION VALUE=1987>1987</OPTION>
-							<OPTION VALUE=1988>1988</OPTION>
-							<OPTION VALUE=1989>1989</OPTION>
-							<OPTION VALUE=1990>1990</OPTION>
-							<OPTION VALUE=1991>1991</OPTION>
-							<OPTION VALUE=1992>1992</OPTION>
-							<OPTION VALUE=1993>1993</OPTION>
-							<OPTION VALUE=1994>1994</OPTION>
-							<OPTION VALUE=1995>1995</OPTION>
-							<OPTION VALUE=1996>1996</OPTION>
 						</SELECT>
 					</TD>
 				</TR>
@@ -148,19 +62,11 @@
 							Femenino:
 						</font>
 						<INPUT type=radio name="género" value="F">
+						<font face="verdana" size=5>Ambos</font>
+						<INPUT type=radio name="género" value="true">
 					</TD>
 				</TR>
-				
-				<TR>
-					<TD>
-						<font face="verdana" size=5>Email</font>
-					</TD>
-					
-					<TD>
-						<TEXTAREA rows="3" name="email">Separe los email por coma(,).</TEXTAREA>
-					</TD>
-				</TR>
-				
+							
 				<tr>
 					<TD>
 						<font face="verdana" size=5>País</font>
@@ -456,18 +362,23 @@
 					</TD>
 					
 					<TD>
-						<font face="verdana" size=3>[Generado Virtual de acuerdo a fecha nacimiento]</font>
+						<SELECT name="zodiaco" id="select2_sample4" class="span12 select2" style="font-size:12pt">
+							<OPTION VALUE="Aries"><font face="verdana" size=5>Aries</font></OPTION>
+							<OPTION VALUE="Cáncer"><font face="verdana" size=5>Cáncer</font></OPTION>
+							<OPTION VALUE="Libra"><font face="verdana" size=5>Libra</font></OPTION>
+							<OPTION VALUE="Capricornio"><font face="verdana" size=5>Capricornio</font></OPTION>
+							<OPTION VALUE="Tauro"><font face="verdana" size=5>Tauro</font></OPTION>
+							<OPTION VALUE="Leo"><font face="verdana" size=5>Leo</font></OPTION>
+							<OPTION VALUE="Escorpio"><font face="verdana" size=5>Escorpio</font></OPTION>
+							<OPTION VALUE="Acuario"><font face="verdana" size=5>Acuario</font></OPTION>
+							<OPTION VALUE="Géminis"><font face="verdana" size=5>Géminis</font></OPTION>
+							<OPTION VALUE="Virgo"><font face="verdana" size=5>Virgo</font></OPTION>
+							<OPTION VALUE="Sagitario"><font face="verdana" size=5>Sagitario</font></OPTION>
+							<OPTION VALUE="Piscis"><font face="verdana" size=5>Piscis</font></OPTION>
+						</SELECT>
 					</TD>
 				</TR>
 					
-				<TR>
-					<TD>
-						<font face="verdana" size=5>Frase</font>
-					</TD>
-					<TD>
-						<TEXTAREA rows="3" name="comentarios">Para cada estrella hay quien la miré</TEXTAREA>
-					</TD>
-				</TR>
 			</div>
 
 					
@@ -532,25 +443,15 @@
 						<INPUT type=radio name="desea_hijos" value="true">
 						<font face="verdana" size=5>No</font>
 						<INPUT type=radio name="desea_hijos" value="false">
+						<font face="verdana" size=5>Ambos</font>
+						<INPUT type=radio name="mascota_tieneQuiere" value="true">
 					</TD>
 				</TR>
 <!-- Información: Aspecto Físico -->
 				<th colspan="2">
 					<font face="verdana" size=5 align="center"><br>Aspecto Físico</font>
 				</th>
-				
-				<tr>
-					<td>
-						<font face="verdana" size=5>Elegir Foto de Perfil</font>
-					</td>
-					
-					<td>
-						<div class="form-group">
-							<input id="file" type="file" class="file" style="font-size:12pt" multiple=true data-preview-file-type="any">
-						</div>
-					</td>
-				</tr>
-				
+							
 				<tr>
 					<td>
 						<font face="verdana" size=5>Altura</font>
@@ -693,23 +594,7 @@
 						</font>
 					</TD>
 					<TD>
-						<SELECT name="ocupacion" style="font-size:12pt">
-							<OPTION VALUE="español">
-								<font face="verdana" size=5>Español</font>
-							</OPTION>
-							<OPTION VALUE="Ingles">
-								<font face="verdana" size=5>Inglés</font>
-							</OPTION>
-							<OPTION VALUE="Frances">
-								<font face="verdana" size=5>Francśs</font>
-							</OPTION>
-							<OPTION VALUE="Portugues">
-								<font face="verdana" size=5>Portugués</font>
-							</OPTION>
-							<OPTION VALUE="Italiano">
-								<font face="verdana" size=5>Italiano</font>
-							</OPTION>
-						</SELECT>
+						<input type="checkbox" name="option3" value="Español"><font face="verdana" size=5>Español</font>
 					</TD>
 				</TR>
 				
@@ -720,23 +605,8 @@
 						</font>
 					</TD>
 					<TD>
-						<SELECT name="ocupacion" style="font-size:12pt">
-							<OPTION VALUE="profesor">
-								<font face="verdana" size=5>Profesor</font>
-							</OPTION>
-							<OPTION VALUE="estudiante">
-								<font face="verdana" size=5>estudiante</font>
-							</OPTION>
-							<OPTION VALUE="ingeniero">
-								<font face="verdana" size=5>ingeniero</font>
-							</OPTION>
-							<OPTION VALUE="pensionado">
-								<font face="verdana" size=5>pensionado</font>
-							</OPTION>
-							<OPTION VALUE="otro">
-								<font face="verdana" size=5>otro</font>
-							</OPTION>
-						</SELECT>
+						<input type="checkbox" name="option3" value="Profesor"><font face="verdana" size=5>Profesor</font>
+						<input type="checkbox" name="option3" value="Pensionado"><font face="verdana" size=5>Pensionado</font>
 					</TD>
 				</TR>
 				
@@ -779,6 +649,8 @@
 						<INPUT type=radio name="mascota_afinidad" value="true">
 						<font face="verdana" size=5>No</font>
 						<INPUT type=radio name="mascota_afinidad" value="false">
+							<font face="verdana" size=5>Ambos</font>
+						<INPUT type=radio name="mascota_afinidad" value="true">
 					</TD>
 				</TR>
 				
@@ -788,12 +660,14 @@
 					</TD>
 					<TD>
 						<font face="verdana" size=5>Si</font>
-						<INPUT type=radio name="mascota_tieneQuiere" value="true">
+						<INPUT type=radio name="mascota_tieneQuiere" value="false">
 						<font face="verdana" size=5>No</font>
 						<INPUT type=radio name="mascota_tieneQuiere" value="false">
+						<font face="verdana" size=5>Ambos</font>
+						<INPUT type=radio name="mascota_tieneQuiere" value="true">
 					</TD>
 				</TR>
-				
+				<!---
 				<TR>
 					<TD>
 						<font face="verdana" size=5>Especie</font>
@@ -815,11 +689,11 @@
 						</SELECT>
 					</TD>
 				</TR>
-				
+				--->
+				<th colspan="2">
+								<font face="verdana" size=5 align="center"><br>Deportes</font>
+				</th>
 				<TR>
-					<TD>
-						<font face="verdana" size=5>Deportes</font>
-					</TD>
 					<TD>
 						<input type="checkbox" name="option3" value="futbol">
 							<font face="verdana" size=5>Futbol</font>
@@ -832,7 +706,6 @@
 					</td>
 				</tr>
 				<tr>
-					<td> </td>
 					<TD>
 						<input type="checkbox" name="option3" value="baloncesto">
 							<font face="verdana" size=5>Balonces</font>
@@ -845,10 +718,10 @@
 					</td>
 				</TR>
 				<div>
+					<th colspan="2">
+								<font face="verdana" size=5 align="center"><br>Actvidades Recreativas</font>
+					</th>
 					<TR>
-						<TD>
-							<font face="verdana" size=5>Actividad Recreativa</font>
-						</TD>
 						<TD>
 							<input type="checkbox" name="option3" value="picnic">
 								<font face="verdana" size=5>Picnic</font>
@@ -861,7 +734,6 @@
 						</td>
 					</tr>
 					<tr>
-						<td> </td>
 						<TD>
 							<input type="checkbox" name="option3" value="cine">
 								<font face="verdana" size=5>Cine</font>
@@ -876,10 +748,10 @@
 				</div>
 				
 				<div>
+					<th colspan="2">
+								<font face="verdana" size=5 align="center"><br>Hobbies</font>
+					</th>
 					<TR>
-						<TD>
-							<font face="verdana" size=5>Hobbie</font>
-						</TD>
 						<TD>
 							<input type="checkbox" name="option3" value="Origami">
 								<font face="verdana" size=5>Origami</font>
@@ -892,7 +764,6 @@
 						</td>
 					</tr>
 					<tr>
-						<td> </td>
 						<TD>
 							<input type="checkbox" name="option3" value="Pintura">
 								<font face="verdana" size=5>Pintura</font>
@@ -907,11 +778,10 @@
 				</div>
 				
 				<div>
-					<TR> <td> </td></TR>
+					<th colspan="2">
+								<font face="verdana" size=5 align="center"><br>Vicios</font>
+					</th>
 					<TR> 
-						<TD>
-							<font face="verdana" size=5>Vicios</font>
-						</TD>
 						<TD>
 							<input type="checkbox" name="option3" value="Alcohol">
 								<font face="verdana" size=5>Alcohol</font>
@@ -924,7 +794,6 @@
 						</td>
 					</tr>
 					<tr>
-						<td> </td>
 						<TD>
 							<input type="checkbox" name="option3" value="Tabaco">
 								<font face="verdana" size=5>Tabaco</font>
@@ -936,14 +805,7 @@
 							<font face="verdana" size=5>veces a la semana</font>
 						</td>
 					</TR>
-				</div>
-				
-
-<!-- Botón -->
-				<TH COLSPAN=2>
-					<INPUT type="submit" value=" Crear " style="font-size:12pt" style='width:100px; height:50px'>
-				</TH>
-			
+				</div>			
 							
 			</TABLE>
 			</form>
