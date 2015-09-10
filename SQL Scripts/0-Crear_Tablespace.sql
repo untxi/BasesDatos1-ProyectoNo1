@@ -1,7 +1,7 @@
 -- Crear Tablespace CB (CorBesso)
 -- CB: DATA
 CREATE TABLESPACE CB_Data
-DATAFILE 'C:\app\sam\oradata\lab00sammy\CBdata01.dbf'
+DATAFILE 'C:\app\sam\oradata\corbesso\CBdata01.dbf'
 SIZE 10M
 REUSE
 AUTOEXTEND ON
@@ -10,7 +10,7 @@ MAXSIZE 200M;
 --
 -- CB: INDEX
 CREATE TABLESPACE CB_Ind
-DATAFILE 'C:\app\sam\oradata\lab00sammy\CBind01.dbf'
+DATAFILE 'C:\app\sam\oradata\corbesso\CBind01.dbf'
 SIZE 10M
 REUSE
 AUTOEXTEND ON
