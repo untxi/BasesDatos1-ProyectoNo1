@@ -12,5 +12,10 @@ CREATE TABLE PERSONA
        AFINIDAD_MASCOTA   CHAR(1)         CONSTRAINT PERSONA_AFINIDAD_MASCOTA_NN    NOT NULL,
        DISPONIBLE_MASCOTA NUMBER(1)       CONSTRAINT PERSONA_DISPONIBLE_MASCOTA_NN  NOT NULL,
        CANT_HIJOS         NUMBER(2)       CONSTRAINT PERSONA_CANT_HIJOS_NN 			NOT NULL,
-       QUIERE_HIJOS       CHAR(1)         CONSTRAINT PERSONA_QUIERE_HIJOS_NN		NOT NULL
+       QUIERE_HIJOS       CHAR(1)         CONSTRAINT PERSONA_QUIERE_HIJOS_NN		NOT NULL,
+       -- Atributos de Auditoria
+       Fec_creacion 	  DATE,
+       Usuario_creacion   VARCHAR2(10),
+       Fec_ultima_modificacion     DATE,
+       Usuario_ultima_modificacion VARCHAR2(10)
 );
