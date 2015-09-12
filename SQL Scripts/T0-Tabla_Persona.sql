@@ -1,3 +1,4 @@
+-- TABLA: PERSONA
 CREATE TABLE PERSONA
 (
        PERSONA_ID         NUMBER(6),
@@ -19,3 +20,5 @@ CREATE TABLE PERSONA
        Fec_ultima_modificacion     DATE,
        Usuario_ultima_modificacion VARCHAR2(10)
 );
+
+COMMET TABLE PERSONA IS 'TABLA DE INFORMACION DE PERSONAS';
