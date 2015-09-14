@@ -1,0 +1,17 @@
+-- TABLA: PARAMETROS
+CREATE TABLE PARAMETROS
+(
+	PARAMETRO_ID	     NUMBER(6),
+  CONSTRAINT         PK_PARAMETRO PRIMARY KEY(PARAMETRO_ID),
+
+	MENSAJE_CORRERO      VARCHAR2(250),
+	TOP_MATCH			 NUMBER(6),
+	TOP_WINK			 NUMBER(6),	
+   -- Atributos de Auditoria
+       Fec_creacion 	  DATE,
+       Usuario_creacion   VARCHAR2(10),
+       Fec_ultima_modificacion     DATE,
+       Usuario_ultima_modificacion VARCHAR2(10)
+);
+
+COMMENT ON TABLE PARAMETROS IS 'TABLA DE PARAMETROS GENERALES PARA LA APLICACION';
