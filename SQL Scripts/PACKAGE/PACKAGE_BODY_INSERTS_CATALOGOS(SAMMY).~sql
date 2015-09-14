@@ -48,5 +48,6 @@ CREATE OR REPLACE PACKAGE BODY INSERTS_CATALOGO IS
                       INSERT INTO PESO(PESO_ID,RANGO)
                       VALUES(S_PESO_ID.NEXTVAL, pRango);
                  END;
+        -- END;
 
 END INSERTS_CATALOGO;

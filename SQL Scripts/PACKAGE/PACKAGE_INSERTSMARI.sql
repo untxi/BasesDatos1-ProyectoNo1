@@ -1,0 +1,18 @@
+CREATE OR REPLACE PACKAGE INSERTS IS
+
+       PROCEDURE INSERTAR_CATALOGO_ALTURA(pRango in varchar2);
+       PROCEDURE INSERTAR_CATALOGO_CCOJOS(pColor in varchar2);
+       PROCEDURE INSERTAR_CATALOGO_CCABELLO(pColor in varchar2);
+       PROCEDURE INSERTAR_CATALOGO_CONTEXTURA(pTipo in varchar2);
+       PROCEDURE INSERTAR_CATALOGO_CPIEL(pNombre in varchar2);
+       PROCEDURE INSERTAR_CATALOGO_DEPORTE(pNombre in varchar2);
+       PROCEDURE INSERTAR_CATALOGO_ESCOLARIDAD(pNivel in varchar2);
+       --REVISAR EVENTO
+       PROCEDURE INSERTAR_CATALOGO_EVENTO(pNombre in varchar2,pDescripcion in varchar2,pFecha in date,pCiudad in varchar2,pPais in varchar2);
+       PROCEDURE INSERTAR_CATALOGO_FRECUENCIA(pNombre in varchar2);
+       PROCEDURE INSERTAR_CATALOGO_HOBBIE(pNombre in varchar2);
+       PROCEDURE INSERTAR_CATALOGO_IDIOMA(pNombre in varchar2);
+       PROCEDURE INSERTAR_CATALOGO_OCUPACION(pNombre in varchar2);
+       PROCEDURE INSERTAR_CATALOGO_PAIS(pNombre in varchar2);
+
+END INSERTS;
