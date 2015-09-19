@@ -15,5 +15,6 @@ CREATE TABLE CIUDAD
        Usuario_ultima_modificacion VARCHAR2(10)
 );
 
+comment on table CIUDAD is 'Catalogo de ciudades';
 --ID CIUDAD
 
