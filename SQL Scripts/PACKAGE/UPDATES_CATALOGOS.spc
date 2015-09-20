@@ -18,7 +18,7 @@ CREATE OR REPLACE PACKAGE UPDATES_CATALOGOS IS
 
        PROCEDURE UPDATE_CATALOGO_ALTURA(pIDmodif in number,pRango in varchar2);
 
-       PROCEDURE UPDATE_CATALOGO_CCOJOS(pIDmodif in number,pColor in varchar2);
+       PROCEDURE UPDATE_CATALOGO_COJOS(pIDmodif in number,pColor in varchar2);
 
        PROCEDURE UPDATE_CATALOGO_CCABELLO(pIDmodif in number,pColor in varchar2);
 
@@ -39,7 +39,8 @@ CREATE OR REPLACE PACKAGE UPDATES_CATALOGOS IS
        PROCEDURE UPDATE_CATALOGO_OCUPACION(pIDmodif in number,pNombre in varchar2);
 
        PROCEDURE UPDATE_CATALOGO_PAIS(pIDmodif in number,pNombre in varchar2);
-       
+
        PROCEDURE update_catalogo_est_civil(pIDmodif in number, pEstado in varchar2);
 
 END UPDATES_CATALOGOS;
+/

@@ -16,9 +16,6 @@ CREATE TABLE BUSCAR
        QUIERE_HIJOS       CHAR(1)         CONSTRAINT BUSCAR_QUIERE_HIJOS_NN		     NOT NULL,
        
        -- foreign KEYS
-       EST_CIVIL_ID number(6),
-       constraint FK_EST_CIVIL_B foreign key (EST_CIVIL_ID) references EST_CIVIL(EST_CIVIL_ID),
-       
        CIUDAD_ID NUMBER(6),
        CONSTRAINT FK_CIUDAD_B FOREIGN KEY (CIUDAD_ID) REFERENCES CIUDAD(CIUDAD_ID),
        PAIS_ID NUMBER(6),

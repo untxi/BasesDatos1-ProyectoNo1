@@ -146,6 +146,13 @@ CREATE OR REPLACE PACKAGE BODY INSERTS_CATALOGO IS
            insert into pais(pais_id,nombre)
            values(s_pais_id.nextval, pNombre);
          end;
+       
+       procedure insertar_catalogo_est_civil(pEstado in varchar2)
+         as 
+         begin
+           insert into est_civil(est_civil_id, estado)
+           values(S_est_civil_id.Nextval, pEstado);
+         end;
          
 END INSERTS_CATALOGO;
 

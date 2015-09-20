@@ -39,5 +39,7 @@ CREATE OR REPLACE PACKAGE INSERTS_CATALOGO IS
        PROCEDURE INSERTAR_CATALOGO_OCUPACION(pNombre in varchar2);
        
        PROCEDURE INSERTAR_CATALOGO_PAIS(pNombre in varchar2);
+       
+       procedure insertar_catalogo_est_civil(pEstado in varchar2);
 
 END INSERTS_CATALOGO;

@@ -159,5 +159,13 @@ CREATE OR REPLACE PACKAGE BODY UPDATES_CATALOGOS IS
                    SET NOMBRE = pNombre
                    WHERE PAIS_ID = pIDmodif;
                  END;
+       
+       PROCEDURE update_catalogo_est_civil(pIDmodif in number, pEstado in varchar2)
+         as
+                 begin
+                   update EST_CIVIL
+                   set ESTADO = pEstado
+                   where EST_CIVIL_ID = pIDmodif;
+                 end;
 
 END UPDATES_CATALOGOS;

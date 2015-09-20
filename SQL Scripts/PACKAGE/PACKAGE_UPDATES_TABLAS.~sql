@@ -24,7 +24,7 @@ CREATE OR REPLACE PACKAGE BODY UPDATES_TABLAS IS
                     WHERE DEPORTE_ID = pDeporte AND PERSONA_ID = pPersona;
                  END;
 
-       PROCEDURE UPDATE_TABLA_HOBBIE_P(pHobbie in number, pPersona in number, pFrecuencia in number)
+       PROCEDURE UPDATE_TABLA_HOBBIE_P(pIDmodif in number, pHobbie in number, pPersona in number, pFrecuencia in number)
          AS
                  BEGIN
                     UPDATE hobbie_x_persona

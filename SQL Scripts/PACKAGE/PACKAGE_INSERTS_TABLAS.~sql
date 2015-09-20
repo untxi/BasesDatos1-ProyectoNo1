@@ -1,5 +1,7 @@
 CREATE OR REPLACE PACKAGE INSERTS_TABLAS IS
 
+       PROCEDURE INSERTAR_TABLA_EVENTO(pFechaEvento in date, pDescripcion in varchar2, pPais in number, pCiudad in number);
+
        PROCEDURE INSERTAR_TABLA_ACTIVIDAD_P(pActividad in number, pPersona in number, pFrecuencia in number);
 
        PROCEDURE INSERTAR_TABLA_DEPORTE_P(pDeporte in number, pPersona in number, pFrecuencia in number);
@@ -8,7 +10,7 @@ CREATE OR REPLACE PACKAGE INSERTS_TABLAS IS
 
        PROCEDURE INSERTAR_TABLA_HOBBIE_P(pHobbie in number, pPersona in number, pFrecuencia in number);
 
-      PROCEDURE INSERTAR_TABLA_PERSONA(pNombre in varchar2, pPrimerApellido in varchar2, pSegundoApellido in varchar2,
+       PROCEDURE INSERTAR_TABLA_PERSONA(pNombre in varchar2, pPrimerApellido in varchar2, pSegundoApellido in varchar2,
          pNacimiento in date, pGenero in char, pFoto in varchar2, pSlogan in varchar2, pAfinidad_Mascota in char,
          pDisponibilidad_Mascota in char, pCant_Hijos in number, pQuiere_Hijos in char, pCiudad in number,
          pPais in number, pReligion in number, pZodiaco in number, pAltura in number, pPeso in number,
@@ -24,7 +26,7 @@ CREATE OR REPLACE PACKAGE INSERTS_TABLAS IS
          pPais in number, pReligion in number, pZodiaco in number, pAltura in number, pPeso in number,
          pContextura in number, pCPiel in number, pCOjos in number, pCCabello in number,
          pOcupacion in number, pSalario in number, pEscolaridad in number);
-         
+                
        PROCEDURE INSERTAR_TABLA_IDIOMA_P(pPersona in number, pIdioma in varchar2);
 
 
