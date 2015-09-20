@@ -3,15 +3,15 @@ CREATE OR REPLACE PACKAGE BODY INSERTS_TABLAS IS
        PROCEDURE INSERTAR_TABLA_ACTIVIDAD_P(pActividad in number, pPersona in number, pFrecuencia in number)
          AS
                  BEGIN
-                   INSERT INTO ACTIVIDAD_X_PERSONA(ACTIVIDAD_RECREATIVA_ID,PERSONA_ID,FRECUENCIA_ID)
-                   VALUES(pActividad, pPersona, pFrecuencia);
+                   INSERT INTO ACTIVIDAD_X_PERSONA(ACTIVIDAD_X_PERSONA_ID,ACTIVIDAD_RECREATIVA_ID,PERSONA_ID,FRECUENCIA_ID)
+                   VALUES(S_ACTIVIDAD_PERSONA_ID.NEXTVAL,pActividad, pPersona, pFrecuencia);
                  END;
 
        PROCEDURE INSERTAR_TABLA_DEPORTE_P(pDeporte in number, pPersona in number, pFrecuencia in number)
          AS
                  BEGIN
-                   INSERT INTO DEPORTE_X_PERSONA(DEPORTE_ID,PERSONA_ID,FRECUENCIA_ID)
-                   VALUES(pDeporte, pPersona, pFrecuencia);
+                   INSERT INTO DEPORTE_X_PERSONA(DEPORTE_X_PERSONA_ID,DEPORTE_ID,PERSONA_ID,FRECUENCIA_ID)
+                   VALUES(S_DEPORTE_X_PERSONA_ID.nextval,pDeporte, pPersona, pFrecuencia);
                  END;
 
        PROCEDURE INSERTAR_TABLA_EMAIL_P(pEmail in varchar2, pPersona in number)
@@ -24,8 +24,8 @@ CREATE OR REPLACE PACKAGE BODY INSERTS_TABLAS IS
        PROCEDURE INSERTAR_TABLA_HOBBIE_P(pHobbie in number, pPersona in number, pFrecuencia in number)
          AS
                  BEGIN
-                   INSERT INTO HOBBIE_X_PERSONA(HOBBIE_ID,PERSONA_ID,FRECUENCIA_ID)
-                   VALUES(pHobbie, pPersona, pFrecuencia);
+                   INSERT INTO HOBBIE_X_PERSONA(HOBBIE_X_PERSONA_ID,HOBBIE_ID,PERSONA_ID,FRECUENCIA_ID)
+                   VALUES(S_HOBBIE_PERSONA_ID.NEXTVAL, pHobbie, pPersona, pFrecuencia);
                  END;
 
        PROCEDURE INSERTAR_TABLA_PERSONA(pNombre in varchar2, pPrimerApellido in varchar2, pSegundoApellido in varchar2,
@@ -55,8 +55,8 @@ CREATE OR REPLACE PACKAGE BODY INSERTS_TABLAS IS
        PROCEDURE INSERTAR_TABLA_VICIO_P(pVicio in number, pPersona in number, pFrecuencia in number)
          AS
                  BEGIN
-                   INSERT INTO VICIO_X_PERSONA(VICIO_ID,PERSONA_ID,FRECUENCIA_ID)
-                   VALUES(pVicio, pPersona, pFrecuencia);
+                   INSERT INTO VICIO_X_PERSONA(VICIO_X_PERSONA_ID,VICIO_ID,PERSONA_ID,FRECUENCIA_ID)
+                   VALUES(S_VICIO_X_PERSONA_ID.nextval, pVicio, pPersona, pFrecuencia);
                  END;
 
        PROCEDURE INSERTAR_TABLA_BUSCAR_P(pPersona in number, pEdad in varchar2, pGenero in char, pAfinidad_Mascota in char,
@@ -77,9 +77,8 @@ CREATE OR REPLACE PACKAGE BODY INSERTS_TABLAS IS
        PROCEDURE INSERTAR_TABLA_IDIOMA_P(pPersona in number, pIdioma in varchar2)
          as
          begin
-           insert into IDIOMA_X_PERSONA(PERSONA_ID,IDIOMA_ID)
-           VALUES(pPersona, pIdioma);
+           insert into IDIOMA_X_PERSONA(IDIOMA_X_PERSONA_ID,PERSONA_ID,IDIOMA_ID)
+           VALUES(S_IDIOMA_PERSONA_ID.NEXTVAL, pPersona, pIdioma);
          end;
-
 
 END INSERTS_TABLAS;

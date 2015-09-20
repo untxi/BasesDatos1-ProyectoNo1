@@ -1,0 +1,30 @@
+CREATE OR REPLACE PACKAGE UPDATES_TABLAS IS
+
+       PROCEDURE UPDATE_TABLA_ACTIVIDAD_P(pActividad in number, pPersona in number, pFrecuencia in number);
+
+       PROCEDURE UPDATE_TABLA_DEPORTE_P(pDeporte in number, pPersona in number, pFrecuencia in number);
+
+       PROCEDURE UPDATE_TABLA_EMAIL_P(pEmail in varchar2, pPersona in number);
+
+       PROCEDURE UPDATE_TABLA_HOBBIE_P(pHobbie in number, pPersona in number, pFrecuencia in number);
+
+      PROCEDURE UPDATE_TABLA_PERSONA(pNombre in varchar2, pPrimerApellido in varchar2, pSegundoApellido in varchar2,
+         pNacimiento in date, pGenero in char, pFoto in varchar2, pSlogan in varchar2, pAfinidad_Mascota in char,
+         pDisponibilidad_Mascota in char, pCant_Hijos in number, pQuiere_Hijos in char, pCiudad in number,
+         pPais in number, pReligion in number, pZodiaco in number, pAltura in number, pPeso in number,
+         pContextura in number, pCPiel in number, pCOjos in number, pCCabello in number,
+         pOcupacion in number, pSalario in number, pEscolaridad in number);
+
+       PROCEDURE UPDATE_TABLA_TIPOU(pAdministrador in char, pEmail in varchar2, pContrasena in varchar2);
+
+       PROCEDURE UPDATE_TABLA_VICIO_P(pVicio in number, pPersona in number, pFrecuencia in number);
+
+       PROCEDURE UPDATE_TABLA_BUSCAR_P(pPersona in number, pEdad in varchar2, pGenero in char, pAfinidad_Mascota in char,
+         pDisponibilidad_Mascota in char, pCant_Hijos in number, pQuiere_Hijos in char, pCiudad in number,
+         pPais in number, pReligion in number, pZodiaco in number, pAltura in number, pPeso in number,
+         pContextura in number, pCPiel in number, pCOjos in number, pCCabello in number,
+         pOcupacion in number, pSalario in number, pEscolaridad in number);
+       
+       PROCEDURE UPDATE_TABLA_IDIOMA_P(pPersona in number, pIdioma in varchar2);
+         
+END UPDATES_TABLAS;
