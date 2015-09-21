@@ -24,12 +24,12 @@ CREATE OR REPLACE PACKAGE BODY UPDATES_TABLAS IS
                     WHERE DEPORTE_ID = pDeporte AND PERSONA_ID = pPersona;
                  END;
 
-       PROCEDURE UPDATE_TABLA_HOBBIE_P(pIDmodif in number, pHobbie in number, pPersona in number, pFrecuencia in number)
+       PROCEDURE UPDATE_TABLA_HOBBIE_P(pHobbie in number, pPersona in number, pFrecuencia in number)
          AS
                  BEGIN
                     UPDATE hobbie_x_persona
                     SET FRECUENCIA_ID = pFrecuencia
-                    WHERE HOBBIE_ID = pDeporte AND PERSONA_ID = pPersona;
+                    WHERE HOBBIE_ID = pHobbie AND PERSONA_ID = pPersona;
                  END;
 
        PROCEDURE UPDATE_TABLA_PERSONA(pIDmodif in number, pNombre in varchar2, pPrimerApellido in varchar2, pSegundoApellido in varchar2,
@@ -41,7 +41,7 @@ CREATE OR REPLACE PACKAGE BODY UPDATES_TABLAS IS
          AS
                  BEGIN
                     UPDATE PERSONA
-                    SET 
+                    SET
                       NOMBRE             = pNombre,
                       PRIMER_APELLIDO    = pPrimerApellido,
                       SEGUNDO_APELLIDO   = pSegundoApellido,
@@ -55,9 +55,9 @@ CREATE OR REPLACE PACKAGE BODY UPDATES_TABLAS IS
                       QUIERE_HIJOS       = pQuiere_Hijos,
                       CIUDAD_ID          = pCiudad,
                       PAIS_ID            = pPais,
-                      RELIGION_ID        = pReligion, 
-                      ZODIACO_ID         = pZodiaco, 
-                      ALTURA_ID          = pAltura, 
+                      RELIGION_ID        = pReligion,
+                      ZODIACO_ID         = pZodiaco,
+                      ALTURA_ID          = pAltura,
                       PESO_ID            = pPeso,
                       CONTEXTURA_ID      = pContextura,
                       CPIEL_ID           = pCPiel,
@@ -72,11 +72,17 @@ CREATE OR REPLACE PACKAGE BODY UPDATES_TABLAS IS
        PROCEDURE UPDATE_TABLA_TIPOU(pIDmodif in number, pAdministrador in char, pEmail in varchar2, pContrasena in varchar2)
          AS
                  BEGIN
+                   update tipo_usuario
+                   set administrador = pAdministrador, email = pEmail, contrasena = pContrasena
+                   where tipo_usuario_id = pIDmodif;
                  END;
 
-       PROCEDURE UPDATE_TABLA_VICIO_P(pIDmodif in number, pVicio in number, pPersona in number, pFrecuencia in number)
+       PROCEDURE UPDATE_TABLA_VICIO_P(pVicio in number, pPersona in number, pFrecuencia in number)
          AS
                  BEGIN
+                   update vicio_x_persona
+                   set FRECUENCIA_ID = pFrecuencia
+                   where VICIO_ID = pVicio and PERSONA_ID = pPersona;
                  END;
 
        PROCEDURE UPDATE_TABLA_BUSCAR_P(pIDmodif in number, pEdad in varchar2, pGenero in char,
@@ -88,7 +94,7 @@ CREATE OR REPLACE PACKAGE BODY UPDATES_TABLAS IS
                  BEGIN
                    UPDATE BUSCAR
                     SET
-                      NACIMIENTO         = pEdad,
+                      EDAD               = pEdad,
                       GENERO             = pGenero,
                       AFINIDAD_MASCOTA   = pAfinidad_Mascota,
                       DISPONIBLE_MASCOTA = pDisponibilidad_Mascota,
@@ -96,9 +102,9 @@ CREATE OR REPLACE PACKAGE BODY UPDATES_TABLAS IS
                       QUIERE_HIJOS       = pQuiere_Hijos,
                       CIUDAD_ID          = pCiudad,
                       PAIS_ID            = pPais,
-                      RELIGION_ID        = pReligion, 
+                      RELIGION_ID        = pReligion,
                       ZODIACO_ID         = pZodiaco,
-                      ALTURA_ID          = pAltura, 
+                      ALTURA_ID          = pAltura,
                       PESO_ID            = pPeso,
                       CONTEXTURA_ID      = pContextura,
                       CPIEL_ID           = pCPiel,
@@ -110,7 +116,7 @@ CREATE OR REPLACE PACKAGE BODY UPDATES_TABLAS IS
                     WHERE BUSCAR_ID = pIDmodif;
                  END;
 
-       PROCEDURE UPDATE_TABLA_PARAMETROS(pIDmodif in number, pMsjCorreo in varchar2, pTop_match in number,
+       PROCEDURE UPDATE_TABLA_PARAMETROS(pMsjCorreo in varchar2, pTop_match in number,
           pTop_wink in number, pTop_visitas in number, pMax_cantidades in number)
          AS
                  BEGIN
@@ -120,8 +126,8 @@ CREATE OR REPLACE PACKAGE BODY UPDATES_TABLAS IS
                        top_match      = pTop_match,
                        top_wink       = pTop_wink,
                        top_visitas    = pTop_visitas,
-                       max_cantidades = pMax_cantidades,
-                   where parametro_id = pIDmodif;
+                       max_cantidades = pMax_cantidades
+                   where parametro_id = 000000;
                  END;
 
 END UPDATES_TABLAS;
