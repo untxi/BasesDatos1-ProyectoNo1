@@ -21,6 +21,7 @@ CREATE TABLE PERSONA
        QUIERE_HIJOS       CHAR(1)         CONSTRAINT PERSONA_QUIERE_HIJOS_NN		    NOT NULL,
        
        -- foreign KEYS
+       
        EST_CIVIL_ID number(6),
        constraint FK_EST_CIVIL foreign key (EST_CIVIL_ID) references EST_CIVIL(EST_CIVIL_ID),
 
@@ -55,7 +56,11 @@ CREATE TABLE PERSONA
        SALARIO_ID NUMBER(6),
        CONSTRAINT FK_SALARIO FOREIGN KEY (SALARIO_ID) REFERENCES SALARIO(SALARIO_ID),
        ESCOLARIDAD_ID NUMBER(6),
-       CONSTRAINT FK_ESCOLARIDAD FOREIGN KEY (ESCOLARIDAD_ID) REFERENCES ESCOLARIDAD(ESCOLARIDAD_ID),    
+       CONSTRAINT FK_ESCOLARIDAD FOREIGN KEY (ESCOLARIDAD_ID) REFERENCES ESCOLARIDAD(ESCOLARIDAD_ID),   
+       
+       cant_wink  number(6),
+       cant_match number(6),
+       cant_visit number(6),
        
        -- Atributos de Auditoria
        Fec_creacion 	  DATE,

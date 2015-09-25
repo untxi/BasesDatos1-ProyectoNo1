@@ -1,5 +1,33 @@
 CREATE OR REPLACE PACKAGE BODY DELETES_TABLAS IS
 
+       procedure delete_match(pPersona in number, pMatch in number)
+         as
+                 vMatch number;
+                 begin
+                   delete from bitacora_match
+                   where persona_id = pPersona and match_id = pMatch;
+
+                   select cant_match into vMatch from persona
+                   where Persona.Persona_Id = pPersona;
+
+                   insert into persona(persona_id,cant_match)
+                   values(pPersona, vMatch - 1);
+                 end;
+
+       procedure delete_wink(pPersona in number, pWink in number)
+         as
+                 vWink number;
+                 begin
+                   delete from bitacora_winks
+                   where persona_id = pPersona and wink_id = pWink;
+
+                   select cant_wink into vWink from persona
+                   where Persona.Persona_Id = pPersona;
+
+                   insert into persona(persona_id,cant_wink)
+                   values(pPersona, vWink - 1);
+                 end;
+
        PROCEDURE DELETE_TABLA_EVENTO(pIDmodif in number)
          as
          begin

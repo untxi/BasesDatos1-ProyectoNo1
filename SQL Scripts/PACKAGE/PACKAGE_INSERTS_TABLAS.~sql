@@ -1,10 +1,10 @@
 CREATE OR REPLACE PACKAGE INSERTS_TABLAS IS
 
-       procedure insertar_wink(pPersona in number, pWink in number);
+       procedure insertar_wink(persona_id in number, wink_id in number);
        
-       procedure insertar_visita(pPersona in number, pVisit in number);
+       procedure insertar_visita(persona_id in number, wink_id in number);
        
-       procedure insertar_match(pPersona in number, pMatch in number);
+       procedure insertar_match(persona_id in number, wink_id in number);
 
        PROCEDURE INSERTAR_TABLA_EVENTO(pFechaEvento in date, pDescripcion in varchar2, pPais in number, pCiudad in number);
 

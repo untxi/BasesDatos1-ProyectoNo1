@@ -1,5 +1,10 @@
 CREATE OR REPLACE PACKAGE DELETES_TABLAS IS
 
+       procedure delete_match(pPersona in number, pMatch in number);
+      
+       procedure delete_wink(pPersona in number, pWink in number);
+
+
        PROCEDURE DELETE_TABLA_EVENTO(pIDmodif in number);
 
        PROCEDURE DELETE_TABLA_EMAIL_P(pEmailID in number, pPersona in number);
