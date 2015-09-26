@@ -1,0 +1,14 @@
+CREATE OR REPLACE FUNCTION get_Religion(pReligion_id NUMBER)
+       RETURN NUMBER
+       AS
+              vPersona NUMBER(9);
+       BEGIN 
+
+	 SELECT persona_id FROM PERSONA
+         WHERE PERSONA.RELIGION_ID = pReligion_id;
+
+       RETURN vPersona;
+
+       END;
+       
+--Buscar todas las personas con X religion
