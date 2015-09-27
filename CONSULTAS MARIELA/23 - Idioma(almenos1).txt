@@ -1,0 +1,14 @@
+CREATE OR REPLACE FUNCTION get_Idioma1()
+       RETURN NUMBER
+       AS
+              vPersona NUMBER(9);
+       BEGIN 
+
+	 SELECT COUNT(persona_id) FROM IDIOMA_X_PERSONA
+         WHERE IDIOMA_X_PERSONA.PERSONA_ID > 1;
+
+       RETURN vPersona;
+
+       END;
+       
+--Buscar todas las personas con almenos 1 IDIOMA
