@@ -1,0 +1,14 @@
+CREATE OR REPLACE FUNCTION get_MenosWinks()
+       RETURN NUMBER
+       AS
+              vPersona NUMBER(9);
+       BEGIN 
+
+	 SELECT MIN(PERSONA_ID) FROM BITACORA_WINKS
+         WHERE BITACORA_WINKS.PERSONA_ID > AVG(PERSONA_ID);
+
+       RETURN vPersona;
+
+       END;
+       
+

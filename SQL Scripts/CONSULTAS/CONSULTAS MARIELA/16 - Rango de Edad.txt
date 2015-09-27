@@ -1,0 +1,43 @@
+CREATE OR REPLACE FUNCTION get_rango_edad(pedad1 NUMBER, pedad2 NUMBER)
+       RETURN NUMBER
+       AS
+              vPersona NUMBER(9);
+	      vEdad number;
+	      vFecha number;
+       BEGIN 
+
+         SELECT PERSONA_ID FROM PERSONA
+         WHERE 
+		pedad1 <=
+		
+		(SELECT extract(YEAR FROM SYSDATE) INTO vFecha FROM DUAL;
+    		 SELECT extract(YEAR FROM NACIMIENTO) INTO vEdad FROM PERSONA;)
+		
+		<=pedad2;
+
+       RETURN vPersona;
+       END;
+       
+
+
+
+
+
+--A <= EDAD <= B
+
+
+--CREATE OR REPLACE FUNCTION get_Edad(pid_employee number)
+--RETURN NUMBER
+--AS
+--  vEdad number;
+--  vFecha number;
+  
+--  BEGIN    
+    
+--    SELECT extract(YEAR FROM SYSDATE) INTO vFecha FROM DUAL;
+--    SELECT extract(YEAR FROM BIRTHDAY) INTO vEdad FROM employee
+--    WHERE employee.employee_id = pid_employee;    
+    
+--    RETURN vFecha - vEdad;
+    
+--  END;

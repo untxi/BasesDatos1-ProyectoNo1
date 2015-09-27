@@ -1,0 +1,14 @@
+CREATE OR REPLACE FUNCTION get_CCabello(pCCabello_id number)
+       RETURN NUMBER
+       AS
+              vPersona NUMBER(9);
+       BEGIN 
+
+         SELECT persona_id, nombre FROM PERSONA
+         WHERE PERSONA.CCABELLO_ID = pCCabello_id;
+
+       RETURN vPersona;
+
+       END;
+       
+--Buscar todas las personas con X color de cabello

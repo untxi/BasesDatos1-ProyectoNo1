@@ -1,0 +1,14 @@
+CREATE OR REPLACE FUNCTION get_Zodiacal(pZodiacal_id NUMBER)
+       RETURN NUMBER
+       AS
+              vPersona NUMBER(9);
+       BEGIN 
+
+	 SELECT persona_id FROM PERSONA
+         WHERE PERSONA.ZODIACO_ID = pZodiacal_id;
+
+       RETURN vPersona;
+
+       END;
+       
+--Buscar todas las personas con X Signo zodiacal
