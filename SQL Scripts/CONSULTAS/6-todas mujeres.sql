@@ -1,4 +1,4 @@
-create or replace procedure get_todos(pID number)
+create or replace procedure get_todos_F(pID number)
 IS
        CURSOR cursor_todos IS
               SELECT persona_id,nombre,primer_apellido,segundo_apellido

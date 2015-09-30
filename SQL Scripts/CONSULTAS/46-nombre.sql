@@ -3,7 +3,7 @@ IS
        CURSOR cursor_todos IS
               SELECT persona_id,nombre,primer_apellido,segundo_apellido
               FROM persona
-              WHERE persona_id = NVL(pID,persona_id) and nombre = pNombre;
+              WHERE persona_id = NVL(pID,persona_id) or nombre = pNombre or primer_apellido or segundo_apellido;
       
        BEGIN
          FOR i in cursor_todos LOOP
