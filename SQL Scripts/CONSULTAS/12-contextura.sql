@@ -1,12 +1,7 @@
-create or replace procedure get_contextura(pID number, pContextura in number)
-IS
-       CURSOR cursor_todos IS
-              SELECT persona_id,nombre,primer_apellido,segundo_apellido
-              FROM persona
-              WHERE persona_id = NVL(pID,persona_id) and contextura_id = pContextura;
-      
-       BEGIN
-         FOR i in cursor_todos LOOP
-             dbms_output.put_line('+ '||i.nombre||' '||i.primer_apellido||' '||i.segundo_apellido||' '||i.persona_id);
-         END LOOP;
-       END;
+create or replace procedure Buscar_Contextura(pContextura in number,resultado out sys_refcursor) is
+begin
+ open resultado for
+ SELECT persona_id,nombre,primer_apellido,segundo_apellido
+ FROM persona
+ where persona.contextura_id = pContextura;
+end Buscar_Contextura;

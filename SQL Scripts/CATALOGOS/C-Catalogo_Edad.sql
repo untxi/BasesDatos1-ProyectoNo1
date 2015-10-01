@@ -1,13 +1,15 @@
 -- CATALOGO: EDAD
-CREATE TABLE EDAD
+create table EDAD
 (
-	EDAD_ID 	NUMBER(6),
-  CONSTRAINT PK_EDAD PRIMARY KEY(EDAD_ID),
-	RANGO		VARCHAR2(20) CONSTRAINT EDAD_RANGO_NN NOT NULL,
--- Atributos de Auditoria
-       Fec_creacion 	  DATE,
-       Usuario_creacion   VARCHAR2(10),
-       Fec_ultima_modificacion     DATE,
-       Usuario_ultima_modificacion VARCHAR2(10)
+  edad_id                     NUMBER(6),
+  constraint pk_edad primary key (edad_id),
+  rango_inicio                number(2) CONSTRAINT EDAD_RANGO_i_NN NOT NULL,
+  rango_final                 number(2) CONSTRAINT EDAD_RANGO_f_NN NOT NULL,
+  -- Atributos de Auditoria
+  fec_creacion                DATE,
+  usuario_creacion            VARCHAR2(10),
+  fec_ultima_modificacion     DATE,
+  usuario_ultima_modificacion VARCHAR2(10)
 );
-COMMENT ON TABLE EDAD IS 'CATALOGO DE RANGO DE EDAD';
+-- Add comments to the table 
+comment on table EDAD is 'CATALOGO DE RANGO DE EDAD';
