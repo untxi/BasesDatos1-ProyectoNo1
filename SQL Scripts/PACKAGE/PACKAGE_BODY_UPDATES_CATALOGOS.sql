@@ -1,3 +1,9 @@
+/*
+Fecha: 13/09/2015
+Autor: Samantha Arburola
+DescripciOn: Paquete para actualizar en catalogos
+*/
+
 CREATE OR REPLACE PACKAGE BODY UPDATES_CATALOGOS IS
 
        PROCEDURE UPDATE_CATALOGO_RECREATIVA(pIDmodif in number, pActividad in varchar2)

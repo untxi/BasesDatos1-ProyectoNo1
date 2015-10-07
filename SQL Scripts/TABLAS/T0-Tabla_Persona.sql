@@ -1,4 +1,10 @@
 -- TABLA: PERSONA
+/*
+Fecha: 12/09/2015
+Autor: Samantha Arburola
+DescripciOn: Tabla para almacenar una persona
+*/
+
 CREATE TABLE PERSONA
 (
        PERSONA_ID         NUMBER(6),

@@ -1,4 +1,10 @@
 -- TABLA: BUSCAR
+/*
+Fecha: 18/09/2015
+Autor: Samantha Arburola
+DescripciOn: Tabla para almacenar los gustos de una persona
+*/
+
 CREATE TABLE BUSCAR
 (
        BUSCAR_ID          NUMBER(6),

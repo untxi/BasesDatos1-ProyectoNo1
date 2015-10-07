@@ -1,4 +1,9 @@
 --TABLA: EMAIL_X_PERSONA
+/*
+Fecha: 25/09/2015
+Autor: Samantha Arburola
+DescripciOn: Tabla para almacenar los varios telEfonos de una persona
+*/
 CREATE TABLE TEL_X_PERSONA
 (
   TEL_ID NUMBER(6),

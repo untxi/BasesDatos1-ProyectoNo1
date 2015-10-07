@@ -1,3 +1,10 @@
+
+<--
+Fecha: 01/10/2015
+Autor: Samantha Arburola
+DescripciOn: php para conectar la base y al interfaz
+?-->
+
 <?php  
 // Create connection to Oracle 
 $conn = oci_connect("cb", "cb", "localhost/corbesso"); 

@@ -1,4 +1,11 @@
 --TABLA: BITACORA_WINKS
+
+/*
+Fecha: 25/09/2015
+Autor: Samantha Arburola
+DescripciOn: Tabla para almacenar las visitas de al perfil de una persona
+*/
+
 CREATE TABLE BITACORA_visit
 (
   PERSONA_ID NUMBER(6),

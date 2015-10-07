@@ -1,4 +1,10 @@
 --TABLA EVENTO
+
+/*
+Fecha: 12/09/2015
+Autor: MAriela Barrantes
+DescripciOn: Tabla para eventos de reuniOn de usuario
+*/
 CREATE TABLE EVENTO
 (
   EVENTO_ID NUMBER(6),

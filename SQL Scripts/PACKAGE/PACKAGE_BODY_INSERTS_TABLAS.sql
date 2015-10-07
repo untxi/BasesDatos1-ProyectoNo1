@@ -1,3 +1,9 @@
+/*
+Fecha: 19/09/2015
+Autor: Samantha Arburola
+DescripciOn: Paquete para insertar en tablas
+*/
+
 CREATE OR REPLACE PACKAGE BODY INSERTS_TABLAS IS
 
        procedure insertar_wink(pPersona in number, pWink in number)

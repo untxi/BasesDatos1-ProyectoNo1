@@ -1,4 +1,12 @@
 -- TABLA: DEPORTE POR PERSONA
+
+
+/*
+Fecha: 11/09/2015
+Autor: Samantha Arburola
+DescripciOn: Tabla para almacenar los deportes que practica de una persona
+*/
+
 CREATE TABLE DEPORTE_X_PERSONA
 (
        DEPORTE_ID NUMBER(6),

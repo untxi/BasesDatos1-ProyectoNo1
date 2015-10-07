@@ -1,4 +1,11 @@
 --TABLA: BITACORA_WINKS
+
+/*
+Fecha: 25/09/2015
+Autor: Samantha Arburola
+DescripciOn: Tabla para almacenar los winks de una persona
+*/
+
 CREATE TABLE BITACORA_WINKS
 (
   PERSONA_ID NUMBER(6),

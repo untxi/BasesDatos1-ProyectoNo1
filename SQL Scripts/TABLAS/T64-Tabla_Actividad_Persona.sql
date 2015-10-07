@@ -1,4 +1,12 @@
 --TABLA: ACTIVIDAD POR PERSONA
+
+
+/*
+Fecha: 25/09/2015
+Autor: Samantha Arburola
+DescripciOn: Tabla para almacenar las actividades de una persona
+*/
+
 CREATE TABLE ACTIVIDAD_x_PERSONA
 (     
        ACTIVIDAD_RECREATIVA_ID NUMBER(6),

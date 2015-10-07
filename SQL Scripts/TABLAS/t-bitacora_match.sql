@@ -1,4 +1,11 @@
 --TABLA: BITACORA_WINKS
+
+/*
+Fecha: 25/09/2015
+Autor: Samantha Arburola
+DescripciOn: Tabla para almacenar los match de una persona
+*/
+
 CREATE TABLE BITACORA_MATCH
 (
   PERSONA_ID NUMBER(6),

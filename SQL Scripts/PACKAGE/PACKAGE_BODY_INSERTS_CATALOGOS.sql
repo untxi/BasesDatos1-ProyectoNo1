@@ -1,3 +1,10 @@
+
+/*
+Fecha: 18/09/2015
+Autor: Samantha Arburola
+DescripciOn: Paquete para insertar en catalogos
+*/
+
 CREATE OR REPLACE PACKAGE BODY INSERTS_CATALOGO IS
 
        PROCEDURE INSERTAR_CATALOGO_RECREATIVA(pActividad in varchar2)

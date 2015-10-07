@@ -1,3 +1,10 @@
+
+/*
+Fecha: 30/09/2015
+Autor: Samantha Arburola
+DescripciOn: Paquete para consultas de tablas
+*/
+
 create or replace package consultas is
   procedure Buscar_Cabello(pCabello in number,resultado out sys_refcursor)
     begin

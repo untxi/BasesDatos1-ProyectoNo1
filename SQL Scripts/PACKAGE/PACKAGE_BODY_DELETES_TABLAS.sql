@@ -1,3 +1,10 @@
+
+/*
+Fecha: 21/09/2015
+Autor: Samantha Arburola
+DescripciOn: Paquete para borrado en tablas
+*/
+
 CREATE OR REPLACE PACKAGE BODY DELETES_TABLAS IS
 
        procedure delete_match(pPersona in number, pMatch in number)

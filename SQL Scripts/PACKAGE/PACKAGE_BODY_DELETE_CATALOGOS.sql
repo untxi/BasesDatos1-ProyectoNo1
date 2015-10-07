@@ -1,3 +1,10 @@
+
+/*
+Fecha: 21/09/2015
+Autor: Samantha Arburola
+DescripciOn: Paquete para eliminacion de informaciOn en catalogos
+*/
+
 CREATE OR REPLACE PACKAGE BODYDELETES_CATALOGOS IS
 
        PROCEDURE DELETE_CATALOGO_RECREATIVA(pIDmodif in number)

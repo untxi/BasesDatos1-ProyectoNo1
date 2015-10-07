@@ -1,4 +1,10 @@
 --TABLA: EMAIL_X_PERSONA
+/*
+Fecha: 12/09/2015
+Autor: Samantha Arburola
+DescripciOn: Tabla para almacenar los varios email de una persona
+*/
+
 CREATE TABLE EMAIL_X_PERSONA
 (
   EMAIL_ID NUMBER(6),

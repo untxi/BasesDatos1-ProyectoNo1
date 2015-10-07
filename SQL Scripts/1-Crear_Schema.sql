@@ -1,3 +1,9 @@
+/*
+Fecha: 5/09/2015
+Autor: Samantha Arburola
+DescripciOn: Schema para el proyecto
+*/
+
 CREATE USER CB
 IDENTIFIED BY cb 
 DEFAULT TABLESPACE CB_Data 

@@ -1,4 +1,13 @@
 --TABLA: HOBBIE POR PERSONA
+
+
+/*
+Fecha: 12/09/2015
+Autor: Samantha Arburola
+DescripciOn: Tabla para almacenar los hobbie de una persona
+*/
+
+
 CREATE TABLE HOBBIE_x_PERSONA
 (
        HOBBIE_ID NUMBER(6),

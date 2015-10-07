@@ -1,3 +1,9 @@
+
+/*
+Fecha: 21/09/2015
+Autor: Samantha Arburola
+DescripciOn: Paquete para actualizacion de tablas
+*/
 CREATE OR REPLACE PACKAGE BODY UPDATES_TABLAS IS
 
        PROCEDURE UPDATE_TABLA_EVENTO(pIDmodif in number, pFechaEvento in date, pDescripcion in varchar2, pPais in number, pCiudad in number)

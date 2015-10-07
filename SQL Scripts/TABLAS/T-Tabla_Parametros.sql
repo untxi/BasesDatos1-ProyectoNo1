@@ -1,4 +1,11 @@
 -- TABLA: PARAMETROS
+
+/*
+Fecha: 12/09/2015
+Autor: Samantha Arburola
+DescripciOn: Tabla para almacenar los parametros de la aplicaciOn
+*/
+
 CREATE TABLE PARAMETROS
 (
 	PARAMETRO_ID	     NUMBER(6),
