@@ -1,7 +1,7 @@
 CREATE OR REPLACE PACKAGE DELETES_TABLAS IS
 
        procedure delete_match(pPersona in number, pMatch in number);
-      
+
        procedure delete_wink(pPersona in number, pWink in number);
 
 

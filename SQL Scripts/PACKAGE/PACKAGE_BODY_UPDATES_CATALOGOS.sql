@@ -16,11 +16,11 @@ CREATE OR REPLACE PACKAGE BODY UPDATES_CATALOGOS IS
                    WHERE CIUDAD_ID = pIDmodif;
                  END;
 
-       PROCEDURE UPDATE_CATALOGO_EDAD(pIDmodif in number,pRango IN VARCHAR2)
+       PROCEDURE UPDATE_CATALOGO_EDAD(pIDmodif in number,pRangoInicio IN VARCHAR2, pRangoFinal IN VARCHAR2)
            AS
                  BEGIN
                    UPDATE EDAD
-                   SET RANGO = pRango
+                   SET RANGO_INICIO = pRangoInicio, RANGO_FINAL=pRangoFinal
                    WHERE EDAD_ID = pIDmodif;
                  END;
 
@@ -159,7 +159,7 @@ CREATE OR REPLACE PACKAGE BODY UPDATES_CATALOGOS IS
                    SET NOMBRE = pNombre
                    WHERE PAIS_ID = pIDmodif;
                  END;
-       
+
        PROCEDURE update_catalogo_est_civil(pIDmodif in number, pEstado in varchar2)
          as
                  begin

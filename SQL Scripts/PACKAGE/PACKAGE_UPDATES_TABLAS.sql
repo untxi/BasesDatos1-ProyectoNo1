@@ -11,7 +11,7 @@ CREATE OR REPLACE PACKAGE UPDATES_TABLAS IS
        PROCEDURE UPDATE_TABLA_PERSONA(pIDmodif in number, pNombre in varchar2, pPrimerApellido in varchar2, pSegundoApellido in varchar2,
          pNacimiento in date, pGenero in char, pFoto in varchar2, pSlogan in varchar2, pAfinidad_Mascota in char,
          pDisponibilidad_Mascota in char, pCant_Hijos in number, pQuiere_Hijos in char, pCiudad in number,
-         pPais in number, pReligion in number, pZodiaco in number, pAltura in number, pPeso in number,
+         pNacionalidad in number, pReligion in number, pZodiaco in number, pAltura in number, pPeso in number,
          pContextura in number, pCPiel in number, pCOjos in number, pCCabello in number,
          pOcupacion in number, pSalario in number, pEscolaridad in number);
 
@@ -21,7 +21,7 @@ CREATE OR REPLACE PACKAGE UPDATES_TABLAS IS
 
        PROCEDURE UPDATE_TABLA_BUSCAR_P(pIDmodif in number, pEdad in varchar2, pGenero in char, pAfinidad_Mascota in char,
          pDisponibilidad_Mascota in char, pCant_Hijos in number, pQuiere_Hijos in char, pCiudad in number,
-         pPais in number, pReligion in number, pZodiaco in number, pAltura in number, pPeso in number,
+         pNacionalidad in number, pReligion in number, pZodiaco in number, pAltura in number, pPeso in number,
          pContextura in number, pCPiel in number, pCOjos in number, pCCabello in number,
          pOcupacion in number, pSalario in number, pEscolaridad in number);
 

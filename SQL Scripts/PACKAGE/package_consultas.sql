@@ -1,23 +1,58 @@
 create or replace package consultas is
-       
-       procedure get_afinidad_masc(pID number, pAfinidad in varchar2);
-       procedure get_contextura(pID number, pContextura in number);
---       procedure get_email(pEmail in number);
-       procedure get_escolaridad(pID number, pEscolaridad in number);
-       procedure get_hobbie(pHobbie in number);
-       procedure get_nombre(pNombre in number);
-       procedure get_ocupacion(pID number, pOcupacion in number);
-       procedure get_nacionalidad(pID number, pPais in number);
-       procedure get_pais(pID number, pPais in number);
-       procedure get_peso(pID number, pPeso in number);
-       procedure get_piel(pID number, pPiel in number);
-       procedure get_salario(pID number, pSalario in number);
-       procedure get_todos(pID number);
-       procedure get_ojos(pID number, pOjos in number);
-       procedure get_todos_Gen(pGen in char);
-       procedure get_vicio(pVicio in number);
-       
-       function is_admi(pID in number)
-         return number;
+  procedure Buscar_Cabello(pCabello in number,resultado out sys_refcursor);
 
-END consultas;       
+  procedure Buscar_COjos(pCojos in number,resultado out sys_refcursor);
+
+  procedure Buscar_Contextura(pContextura in number,resultado out sys_refcursor);
+
+  procedure Buscar_CPiel(pCPiel in number,resultado out sys_refcursor);
+
+  procedure Buscar_x_Deporte(pDeporte in number,resultado out sys_refcursor);
+
+  procedure Buscar_Edad(pRango in number,resultado out sys_refcursor);
+
+  procedure Buscar_Escolaridad(pEscolaridad in number,resultado out sys_refcursor);
+
+  procedure Buscar_x_Hobbie(pHobbie in number,resultado out sys_refcursor);
+
+  procedure Buscar_x_Idioma(pIdioma in number,resultado out sys_refcursor);
+
+  procedure Buscar_Ocupacion(pOcupacion in number,resultado out sys_refcursor);
+
+  procedure Buscar_Nacionalidad(pPais in number,resultado out sys_refcursor);
+
+  procedure Buscar_Pais(pPais in number,resultado out sys_refcursor);
+
+  procedure Buscar_Peso(pPeso in number,resultado out sys_refcursor);
+
+  procedure Buscar_Religion(pReligion in number,resultado out sys_refcursor);
+
+  procedure Buscar_Salario(pRango in number,resultado out sys_refcursor);
+
+  procedure Buscar_Zodiaco(pZodiaco in number,resultado out sys_refcursor);
+
+  procedure Buscar_x_Vicio(pVicio in number,resultado out sys_refcursor);
+
+  procedure Buscar_x_actividad(pActividad in number,resultado out sys_refcursor);
+
+  procedure Buscar_AfinMasct(pAfinidad in char,resultado out sys_refcursor);
+
+  procedure Buscar_Disp_Masct(pDisponibilidad in char,resultado out sys_refcursor);
+
+  procedure Buscar_todos(pID in number,resultado out sys_refcursor);
+
+  procedure Buscar_Nombre(pNombre in number,resultado out sys_refcursor);
+
+  procedure Buscar_x_Email(pEmail in number,resultado out sys_refcursor);
+
+  procedure Buscar_Hombres(resultado out sys_refcursor);
+
+  procedure Buscar_Mujeres(resultado out sys_refcursor);
+
+  procedure Buscar_Altura(pAltura in number,resultado out sys_refcursor);
+
+  procedure Buscar_Ciudad(pCiudad in number,resultado out sys_refcursor);
+
+  procedure Buscar_QuienEvento(resultado out sys_refcursor);
+
+end consultas;

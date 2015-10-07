@@ -6,20 +6,19 @@ CREATE OR REPLACE PACKAGE BODY INSERTS_CATALOGO IS
            insert into ACTIVIDAD_RECREATIVA(ACTIVIDAD_RECREATIVA_ID, NOMBRE)
            VALUES(S_RECREATIVA_ID.NEXTVAL, pActividad);
          end;
-         
+
        PROCEDURE INSERTAR_CATALOGO_CIUDAD(pCiudad IN VARCHAR2, idPais IN NUMBER)
          AS
                  BEGIN
                       INSERT INTO CIUDAD(CIUDAD_ID, CIUDAD, PAIS_ID)
                       VALUES(S_CIUDAD_ID.NEXTVAL, pCiudad, idPais);
                  END;
-        -- END;
 
-       PROCEDURE INSERTAR_CATALOGO_EDAD(pRango IN VARCHAR2)
+       PROCEDURE INSERTAR_CATALOGO_EDAD(pRangoInicio IN VARCHAR2, pRangoFinal IN VARCHAR2)
          AS
                  BEGIN
-                      INSERT INTO EDAD(EDAD_ID,RANGO)
-                      VALUES(S_EDAD_ID.NEXTVAL, pRango);
+                      INSERT INTO EDAD(EDAD_ID,RANGO_INICIO,RANGO_FINAL)
+                      VALUES(S_EDAD_ID.NEXTVAL, pRangoInicio, pRangoFinal);
                  END;
         -- END;
 
@@ -104,42 +103,42 @@ CREATE OR REPLACE PACKAGE BODY INSERTS_CATALOGO IS
                  INSERT INTO DEPORTE(DEPORTE_ID,Nombre)
                  VALUES(S_DEPORTE_ID.NEXTVAL, pNombre);
          END ;
-         
+
        PROCEDURE INSERTAR_CATALOGO_ESCOLARIDAD(pNivel in varchar2)
          AS
          BEGIN
            INSERT INTO ESCOLARIDAD(ESCOLARIDAD_ID,NIVEL)
            VALUES(S_ESCOLARIDAD_ID.NEXTVAL, pNivel);
-         END; 
-         
+         END;
+
        PROCEDURE INSERTAR_CATALOGO_FRECUENCIA(pNombre in varchar2)
          AS
          BEGIN
            INSERT INTO FRECUENCIA(FRECUENCIA_ID,NOMBRE)
            VALUES(S_FRECUENCIA_ID.NEXTVAL, pNombre);
          END;
-         
+
        PROCEDURE INSERTAR_CATALOGO_HOBBIE(pNombre in varchar2)
          AS
          BEGIN
            INSERT INTO HOBBIE(HOBBIE_ID,NOMBRE)
            VALUES(S_HOBBIE_ID.NEXTVAL, pNombre);
          END;
-         
+
        PROCEDURE INSERTAR_CATALOGO_IDIOMA(pNombre in varchar2)
          AS
          BEGIN
            INSERT INTO IDIOMA(IDIOMA_ID, NOMBRE)
            VALUES(S_IDIOMA_ID.NEXTVAL, pNombre);
          END;
-         
+
        PROCEDURE INSERTAR_CATALOGO_OCUPACION(pNombre in varchar2)
          AS
          BEGIN
            INSERT INTO OCUPACION(OCUPACION_ID,NIVEL)
            VALUES(S_OCUPACION_ID.NEXTVAL,pNombre);
          END;
-         
+
        PROCEDURE INSERTAR_CATALOGO_PAIS(pNombre in varchar2)
          as
          begin
@@ -153,6 +152,5 @@ CREATE OR REPLACE PACKAGE BODY INSERTS_CATALOGO IS
            insert into est_civil(est_civil_id, estado)
            values(S_est_civil_id.Nextval, pEstado);
          end;
-         
-END INSERTS_CATALOGO;
 
+END INSERTS_CATALOGO;

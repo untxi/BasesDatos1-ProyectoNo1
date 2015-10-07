@@ -70,60 +70,61 @@ end;
 declare
 begin
 	inserts_tablas.INSERTAR_TABLA_PERSONA
-	(  ,'Andrés','González','Mora',to_date('15/06/1988','dd/mm/yyyy'),
+	( 1 ,'Andrés','González','Mora',to_date('15/06/1988','dd/mm/yyyy'),
 	'M','C:\Users\sam\Desktop\fotosPerfil\',
 	'El ignorante afirma; el sabio duda y reflexiona',
-    'T','F', 1,'T', 1, 2, 0, 1, zodiaco, , , , , , , , , );
+    'T','F', 1,'T', 1, 2, 0, 1, 3, 1, 2, 1, 0, 1, 1, 2, 1, 0);
     
 	inserts_tablas.INSERTAR_TABLA_PERSONA
-	(  ,'Marta','Castro','Solís',to_date('3/04/1990','dd/mm/yyyy'),
+	( 2 ,'Marta','Castro','Solís',to_date('3/04/1990','dd/mm/yyyy'),
 	'F','C:\Users\sam\Desktop\fotosPerfil\',
 	'El ignorante afirma; el sabio duda y reflexiona',
-    '','', ,'', , , , , , , , , , , , , , );
+    'T','F', 0,'f', 4, 4, 0, 1, 1, 2, 5, 2, 3, 0, 0, 6, 2, 2);
     
 	inserts_tablas.INSERTAR_TABLA_PERSONA
-	(  ,'Roberto','Badilla','Timberlake',to_date('28/02/1982','dd/mm/yyyy'),
+	( 3 ,'Roberto','Badilla','Timberlake',to_date('28/02/1982','dd/mm/yyyy'),
 	'M','C:\Users\sam\Desktop\fotosPerfil\',
 	'Haz de tu vida un sueño y de tu sueño una realidad',
-    '','', ,'', , , , , , , , , , , , , , );
+    'T','T', 1,'T', 2, 6, 0, 0, 12, 3, 3, 0, 3, 3, 2, 5, 0, 1);
     
     inserts_tablas.INSERTAR_TABLA_PERSONA
-	(  ,'Cristina','Valera','Cerdas',to_date('9/12/1985','dd/mm/yyyy'),
+	( 4 ,'Cristina','Valera','Cerdas',to_date('9/12/1985','dd/mm/yyyy'),
 	'','C:\Users\sam\Desktop\fotosPerfil\',
 	'La belleza es un estado de ánimo',
-    '','', ,'', , , , , , , , , , , , , , );
-    
-    	inserts_tablas.INSERTAR_TABLA_PERSONA
-	(  ,'Josué','Díaz','Muñoz',to_date('25/12/1984','dd/mm/yyyy'),
+    'T','T', 0,'T', 6, 2, 0, 0, 9, 2, 4, 2, 4, 2, 3, 3, 1, 2);
+        
+    inserts_tablas.INSERTAR_TABLA_PERSONA
+	( 5 ,'Josué','Díaz','Muñoz',to_date('25/12/1984','dd/mm/yyyy'),
 	'M','C:\Users\sam\Desktop\fotosPerfil\',
 	'El árbol de las leyes ha de podarse continuamente',
-    '','', ,'', , , , , , , , , , , , , , );
-    
-    	inserts_tablas.INSERTAR_TABLA_PERSONA
+    'F','F', 1,'T', 0, 2, 0, 1, 10, 3, 1, 1, 1, 0, 5, 2, 4, 5);
+END;
+/*
+    inserts_tablas.INSERTAR_TABLA_PERSONA
 	(  ,'Karla','Martínez','Chang',to_date('1/01/1987','dd/mm/yyyy'),
 	'F','C:\Users\sam\Desktop\fotosPerfil\',
 	'La sonrisa es una curva que lo endereza todo',
-    '','', ,'', , , , , , , , , , , , , , );
+    'T','T', 0,'F', 1, 3, 0, 0, zodiaco, 1, 2, 1, 2, 1, 6, 0, 0, 4);
     
-    	inserts_tablas.INSERTAR_TABLA_PERSONA
+    inserts_tablas.INSERTAR_TABLA_PERSONA
 	(  ,'Vinicio','Rojas','Chinchilla',to_date('24/12/1982','dd/mm/yyyy'),
 	'M','C:\Users\sam\Desktop\fotosPerfil\',
 	'No olvides nunca que el primer beso no se da con la boca, sino con los ojos',
-    '','', ,'', , , , , , , , , , , , , , );
+    '','', ,'', , , 0, , zodiaco, , , , , , , , , );
     
-    	inserts_tablas.INSERTAR_TABLA_PERSONA
+    inserts_tablas.INSERTAR_TABLA_PERSONA
 	(  ,'Bernardo','Villalobos','Soto',to_date('16/11/1992','dd/mm/yyyy'),
 	'M','C:\Users\sam\Desktop\fotosPerfil\',
 	'Ni la ausencia ni el tiempo son nada cuando se ama',
-    '','', ,'', , , , , , , , , , , , , , );
+    '','', ,'', , , 0, , zodiaco, , , , , , , , , );
     
-    	inserts_tablas.INSERTAR_TABLA_PERSONA
+    inserts_tablas.INSERTAR_TABLA_PERSONA
 	(  ,'Sam','Mendoza','Meléndez',to_date('18/02/1987','dd/mm/yyyy'),
 	'F','C:\Users\sam\Desktop\fotosPerfil\',
 	'Un hermano puede no ser un amigo, pero un amigo será siempre un hermano',
-    '','', ,'', , , , , , , , , , , , , , );
-    
-    	inserts_tablas.INSERTAR_TABLA_PERSONA
+    '','', ,'', , , 0, , zodiaco, , , , , , , , , );
+        
+    inserts_tablas.INSERTAR_TABLA_PERSONA
 	(  ,'Geovanni','Herrera','Cartín',to_date('14/07/1986','dd/mm/yyyy'),
 	'M','C:\Users\sam\Desktop\fotosPerfil\',
 	'Tu compilas mi corazón',
@@ -159,3 +160,4 @@ begin
 	'Cuando mi voz calle con la muerte, mi corazón te seguirá hablando',
     '','', ,'', , , , , , , , , , , , , , );
 end;
+*/

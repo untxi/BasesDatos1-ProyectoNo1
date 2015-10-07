@@ -5,3 +5,13 @@ begin
  FROM persona
  where persona.nacionalidad_id = pPais;
 end Buscar_Nacionalidad;
+
+
+/*
+begin
+     open resultado for
+     SELECT p.persona_id,p.nombre,p.primer_apellido,p.segundo_apellido
+     FROM persona p inner join CIUDAD C
+     on C.PAIS_ID = pPais;
+    end;
+*/
