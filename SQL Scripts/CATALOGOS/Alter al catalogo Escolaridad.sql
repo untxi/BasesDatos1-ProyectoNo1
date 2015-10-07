@@ -1,0 +1,15 @@
+ALTER TABLE ESCOLARIDAD
+ADD fec_creacion DATE;
+
+ALTER TABLE ESCOLARIDAD
+ADD usuario_creacion VARCHAR2(10);
+
+ALTER TABLE ESCOLARIDAD
+ADD fec_ultima_modificacion DATE;
+
+ALTER TABLE ESCOLARIDAD
+ADD usuario_ultima_modificacion VARCHAR2(10);
+
+
+  
+  
