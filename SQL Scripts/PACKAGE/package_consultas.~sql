@@ -56,4 +56,3 @@ create or replace package consultas is
   procedure Buscar_QuienEvento(resultado out sys_refcursor);
 
 end consultas;
-/
