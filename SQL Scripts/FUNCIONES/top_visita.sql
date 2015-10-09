@@ -16,3 +16,4 @@ is
          from persona order by cant_wink desc)
          where rownum <=vTop;
        end;
+       
