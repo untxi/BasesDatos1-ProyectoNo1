@@ -4,16 +4,17 @@ RETURN NUMBER
 AS
   vEdad number;
   vFecha number;
- 
-  BEGIN    
-    
+
+  BEGIN
+
     SELECT extract(YEAR FROM SYSDATE) INTO vFecha FROM DUAL;
     SELECT extract(YEAR FROM NACIMIENTO) INTO vEdad FROM persona
-    WHERE persona.persona_id = pPersona_id;    
-    
+    WHERE persona.persona_id = pPersona_id;
+
     RETURN vFecha - vEdad;
-    
+
   END;
+
   
 /*DECLARE
 VEDAD NUMBER;

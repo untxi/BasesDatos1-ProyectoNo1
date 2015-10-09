@@ -1,101 +1,46 @@
--- MATCH
+-- PRocedimiento MATCH
 
 /*
-Fecha: 07/10/2015
-Autor: Samantha Arburola
-DescripciOn: proceso para vincular personas con atributos semajantes, 
-             sOlo se tomarAn algunos de los atributos en cuenta.
+Fecha : 07/10/2015
+Autor : SAmantha Arburola
 */
-
-create or replace procedure match (pPersona_id number, resultado sys_refcursor) is
-/* Atributos a tomar en cuenta
-
-       edad                      1rango <= rango <= 1rango
-       +genero                    and
-       afinidad_mascota          and
-       disponible_mascota        or
-       cant_hijos                and
-       quiere_hijos              and
-       est_civil_id              and
-       ciudad_id                 and
-       nacionalidad_id           and
-       religion_id               and
-       zodiaco_id                or
-       altura_id                 1rango <= rango <= 1rango
-       peso_id                   and
-       contextura_id             and
-       cpiel_id                  and
-       cojos_id                  or
-       ccabello_id               or
-       idioma_id                 and
-       ocupacion_id              or
-       salario_id                rango <= 1rango
-       escolaridad_id            rango <= 1rango
-*/
-    cursor porBuscar is
-    select *
-    from buscar
-    where buscar.persona_id = pPersona_id;
-   
-    if porBuscar.genero = 'M'
-        then cursor personas is select persona_id from persona where genero = 'M';
-    
-        ELSIF porBuscar.genero = 'F'  
-          then cursor personas is select persona_id from persona where genero = 'F';
-            
-        ELSIF porBuscar.genero = 'A'  
-          then cursor personas is select persona_id from persona;
-    end if;
-    edad.rango_inicio
-    porBuscar.
-     begin
-       
-         open resultado for
-         SELECT persona_id,nombre,primer_apellido,segundo_apellido
-         FROM personas
-         where
-         --edad
-         ( get_edad(persona.persona_id))
-         --afinidad_mascota
-         () 
-         --disponible_mascota
-         () 
-         --cant_hijos
-         ()
-         --quiere_hijos
-         ()
-         --est_civil_id 
-         ()
-         --ciudad_id 
-         ()
-         --nacionalidad_id 
-         ()
-         --religion_id
-         ()
-         --zodiaco_id
-         ()
-         --altura_id 
-         ()
-         --peso_id 
-         ()
-         --contextura_id 
-         ()
-         -- cpiel_id  
-         ()
-         --cojos_id
-         ()
-         --ccabello_id
-         ()
-         --idioma_id
-         ()
-         --ocupacion_id
-         ()
-         --salario_id    
-         ()
-         --escolaridad_id 
-         ()
-         
-
+create or replace procedure match (pPersona_id number, resultado_match out sys_refcursor) is
+    begin
+      open resultado_match for
+      SELECT persona.persona_id, persona.nombre
+      FROM persona inner join est_civil
+      on (select Est_Civil_Id from buscar where buscar.buscar_id = pPersona_id) = est_civil.est_civil_id
+      inner join edad                                      ---***
+      on edad.rango_inicio <= get_edad(pPersona_id) 
+         and 
+         get_edad(pPersona_id) <= edad.rango_final
+      inner join ciudad
+      on (select ciudad_id from buscar where buscar.buscar_id = pPersona_id) = ciudad.ciudad_id
+      inner join pais
+      on (select nacionalidad_id from buscar where buscar.buscar_id = pPersona_id) = pais.pais_id
+      inner join religion
+      on (select religion_id from buscar where buscar.buscar_id = pPersona_id) = religion.religion_id
+      inner join altura
+      on (select altura_id from buscar where buscar.buscar_id = pPersona_id) = altura.altura_id
+      inner join peso
+      on (select peso_id from buscar where buscar.buscar_id = pPersona_id) =peso.peso_id
+      inner join contextura
+      on (select contextura_id from buscar where buscar.buscar_id = pPersona_id) = contextura.contextura_id
+      inner join cpiel
+      on (select cpiel_id from buscar where buscar.buscar_id = pPersona_id) = cpiel.cpiel_id
+      inner join ocupacion
+      on (select ocupacion_id from buscar where buscar.buscar_id = pPersona_id) = ocupacion.ocupacion_id
+      inner join escolaridad
+      on (select escolaridad_id from buscar where buscar.buscar_id = pPersona_id) <= escolaridad.escolaridad_id
+      inner join salario
+      on (select salario_id from buscar where buscar.buscar_id = pPersona_id) <= salario.salario_id
+      
+      where persona.cant_hijos = (select afinidad_mascota from buscar where buscar.buscar_id = pPersona_id)
+            and
+            persona.quiere_hijos = (select afinidad_mascota from buscar where buscar.buscar_id = pPersona_id)
+            and
+            (select genero from buscar where buscar.buscar_id = pPersona_id) = persona.genero
+            and
+            persona.afinidad_mascota = (select afinidad_mascota from buscar where buscar.buscar_id = pPersona_id)
+            ;
 end match;
-
-

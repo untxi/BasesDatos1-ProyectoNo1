@@ -1,9 +1,0 @@
-create or replace procedure is_admi(usuarios out sys_refcursor)
-is
-       begin
-         open usuarios for
-         select email,contrasena
-         from tipo_usuario
-         where tipo_usuario.administrador = 'T';
-       end;
-/

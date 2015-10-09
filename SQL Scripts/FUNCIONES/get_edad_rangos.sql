@@ -6,7 +6,7 @@ is
            select edad.rango_inicio into get
            from edad
            where edad.edad_id = pRango;
-       return get
+       return get;
        end;
        
 create or replace function get_edad_fin(pRango in number)
@@ -17,5 +17,5 @@ is
            select edad.rango_final into get
            from edad
            where edad.edad_id = pRango;
-       return get
-       end;      
+       return get;
+       end;

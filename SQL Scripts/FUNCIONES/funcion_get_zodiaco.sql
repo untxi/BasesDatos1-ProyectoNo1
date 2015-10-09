@@ -29,28 +29,15 @@ is
                 vDia_final  := extract(month from signo.fecha_final);
                 vMes_final  := extract(month from signo.fecha_final);
                 
-                dbms_output.put_line(vDia_inicio);
                 if  vDia_inicio <= vDia_nacimiento and vDia_nacimiento <= vDia_final 
                   and
-                    vMes_inicio <= vMes_nacimiento and vMes_nacimiento <= vMes_final
-                  then
-                    ---
-                    vSigno_ID := signo.zodiaco_id;
-                                
+                    vMes_inicio <= vMes_nacimiento and vMes_nacimiento <= vMes_final then
+                    
+                                vSigno_ID := signo.zodiaco_id;
+                                dbms_output.put_line(vSigno_ID);
                     --exit;
                 end if;
             end loop;
             
             return vSigno_ID;
     end;
-
-
-     
-DECLARE
-Vsigno NUMBER;
-BEGIN
-    Vsigno := calculo_zodiaco(to_date('18/02/1994','dd/mm/yyyy'));
-    dbms_output.put_line(Vsigno);
-END;
-     
-     

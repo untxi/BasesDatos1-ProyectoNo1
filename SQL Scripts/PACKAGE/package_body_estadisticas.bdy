@@ -1,7 +1,7 @@
 /*
-Fecha: 07/10/2015
+Fecha: 9/10/2015
 Autor: Samantha Arburola
-Descripcion: Estadisticas de informaciOn por cAtalogos de los usuario
+DescripcciOn: Pacquete de funciones y procedure para estadisticas de uso del sistema
 */
 
 create or replace package body estadisticas is
@@ -40,145 +40,80 @@ create or replace package body estadisticas is
                 return vResult;
              end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  
-       procedure count_edad
-       is
-       
-       cantENrango number;
-       
-       cursor resultado_E is
-         select edad_id, rango_inicio, rango_final
-         from edad;
-             
-        begin
-        
-           for rango in resultado_E  
-             loop
-               select count(*) into cantENrango
-               from persona
-               where rango.rango_inicio <= get_edad(persona.persona_id)
-                     and
-                    get_edad(persona.persona_id) <= rango.rango_final;
-               dbms_output.put_line(rango.rango_inicio ||' a '|| rango.rango_final ||' = '|| cantENrango);
-             end loop;
-         end;
+       procedure count_edad(resultado out sys_refcursor) is
+          
+       begin
+         open resultado for
+         select edad.rango_inicio,edad.rango_final, count(*) 
+         from persona inner join edad
+         on edad.rango_inicio <= get_edad(persona.persona_id)
+            and
+            get_edad(persona.persona_id) <= edad.rango_final;
+       end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --
-       procedure count_nacionalidad
+       procedure count_nacionalidad(resultado out sys_refcursor)
          is
        
-       cantENrango number;
-       
-       cursor resultado_N is
-         select pais_id,nombre
-         from pais;
-             
-        begin
-        
-           for pais in resultado_N 
-             loop
-               select count(*) into cantENrango
-               from persona 
-               where nacionalidad_id = pais.pais_id;
-               dbms_output.put_line(pais.nombre||' = '|| cantENrango);
-             end loop;
-         end;
+       begin
+         open resultado for
+         select pais.nombre, count(*) 
+         from persona inner join pais
+         on persona.nacionalidad_id = pais.pais_id;
+       end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --       
-       /*
-       procedure count_pais
+       
+       procedure count_pais(resultado out sys_refcursor)
          is
        
-       cantENrango number;
-       
-       cursor resultado_N is
-         select pais_id,nombre
-         from pais;
-             
-        begin
-          
-          
-           dbms_output.put_line(pais.nombre||' = '|| cantENrango);
-             
-         end;
-         */
+       begin
+         open resultado for
+         select pais.nombre, count(*) 
+         from persona inner join ciudad
+         on persona.ciudad_id = ciudad.ciudad_id
+         inner join pais
+         on ciudad.pais_id = pais.pais_id;
+       end;
+         
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --
-       procedure count_ciudad
+       procedure count_ciudad(resultado out sys_refcursor)
          is
        
-       cantENrango number;
-       
-       cursor resultado is
-         select ciudad_id,ciudad
-         from ciudad;
-             
-        begin
-        
-           for ciudad in resultado 
-             loop
-               select count(*) into cantENrango
-               from persona 
-               where persona.ciudad_id = ciudad.ciudad_id;
-               dbms_output.put_line(ciudad.ciudad||' = '|| cantENrango);
-             end loop;
-         end;
+       begin
+         open resultado for
+         select ciudad.ciudad,count(*) 
+         from persona inner join ciudad
+         on persona.ciudad_id = ciudad.ciudad_id;
+       end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --
-       procedure count_religion
+       procedure count_religion(resultado out sys_refcursor)
          is
        
-       cantENrango number;
-       
-       cursor resultado is
-         select religion_id,nombre
-         from religion;
-             
-        begin
-        
-           for religion in resultado 
-             loop
-               select count(*) into cantENrango
-               from persona 
-               where persona.religion_id = religion.religion_id;
-               dbms_output.put_line(religion.nombre||' = '|| cantENrango);
-             end loop;
-         end;
+       begin
+         open resultado for
+         select religion.nombre,count(*) 
+         from persona inner join religion
+         on persona.religion_id = religion.religion_id;
+       end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --
-       procedure count_zodiaco
+       procedure count_zodiaco(resultado out sys_refcursor)
          is
        
-       cantENrango number;
-       
-       cursor resultado is
-         select zodiaco_id,signo
-         from signo_zodiacal;
-             
-        begin
-        
-           for signo in resultado 
-             loop
-               select count(*) into cantENrango
-               from persona
-               where persona.zodiaco_id = signo.zodiaco_id;
-               dbms_output.put_line(signo.signo||' = '|| cantENrango);
-             end loop;
-         end;
+       begin
+         open resultado for
+         select signo_zodiacal.signo,count(*) 
+         from persona inner join signo_zodiacal
+         on persona.zodiaco_id = signo_zodiacal.zodiaco_id;
+       end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --
-       procedure count_est_civil
+       procedure count_est_civil(resultado out sys_refcursor)
          is
        
-       cantENrango number;
-       
-       cursor resultado is
-         select est_civil_id,estado
-         from est_civil;
-             
-        begin
-        
-           for estado in resultado 
-             loop
-               select count(*) into cantENrango
-               from persona
-               where persona.est_civil_id = estado.est_civil_id;
-               dbms_output.put_line(estado.estado||' = '|| cantENrango);
-             end loop;
-         end;
+       begin
+         open resultado for
+         select est_civil.estado,count(*) 
+         from persona inner join est_civil
+         on persona.est_civil_id = est_civil.est_civil_id;
+       end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --
        function count_can_hijos
         return number
@@ -202,185 +137,95 @@ create or replace package body estadisticas is
                 return vResult;
              end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --
-       procedure count_altura
+       procedure count_altura(resultado out sys_refcursor)
          is
        
-       cantENrango number;
-       
-       cursor resultado is
-         select altura_id,rango
-         from altura;
-             
-        begin
-        
-           for rango in resultado 
-             loop
-               select count(*) into cantENrango
-               from persona
-               where persona.altura_id = rango.altura_id;
-               dbms_output.put_line(rango.rango||' = '|| cantENrango);
-             end loop;
-         end;
+       begin
+         open resultado for
+         select altura.rango, count(*) 
+         from persona inner join altura
+         on persona.altura_id = altura.altura_id;
+       end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --
-       procedure count_peso
+       procedure count_peso(resultado out sys_refcursor)
          is
        
-       cantENrango number;
-       
-       cursor resultado is
-         select peso_id, rango
-         from peso;
-             
-        begin
-        
-           for rango in resultado 
-             loop
-               select count(*) into cantENrango
-               from persona
-               where persona.peso_id = rango.peso_id;
-               dbms_output.put_line(rango.rango||' = '|| cantENrango);
-             end loop;
-         end;
+       begin
+         open resultado for
+         select peso.rango, count(*) 
+         from persona inner join peso
+         on persona.peso_id = peso.peso_id;
+       end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --
-       procedure count_contextura
+       procedure count_contextura(resultado out sys_refcursor)
          is
        
-       cantENrango number;
-       
-       cursor resultado is
-         select contextura_id,tipo
-         from contextura;
-             
-        begin
-        
-           for rango in resultado 
-             loop
-               select count(*) into cantENrango
-               from persona
-               where persona.peso_id = rango.contextura_id;
-               dbms_output.put_line(rango.tipo||' = '|| cantENrango);
-             end loop;
-         end;
+       begin
+         open resultado for
+         select contextura.tipo, count(*) 
+         from persona inner join contextura
+         on persona.contextura_id = contextura.contextura_id;
+       end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --
-       procedure count_piel
+       procedure count_piel(resultado out sys_refcursor)
          is
        
-       cantENrango number;
-       
-       cursor resultado is
-         select cpiel_id,nombre
-         from cpiel;
-             
-        begin
-        
-           for color in resultado 
-             loop
-               select count(*) into cantENrango
-               from persona
-               where persona.cpiel_id = color.cpiel_id;
-               dbms_output.put_line(color.nombre||' = '|| cantENrango);
-             end loop;
-         end;
+       begin
+         open resultado for
+         select cpiel.nombre , count(*) 
+         from persona inner join cpiel
+         on persona.cpiel_id = cpiel.cpiel_id;
+       end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --
-       procedure count_ojos
+       procedure count_ojos(resultado out sys_refcursor)
          is
        
-       cantENrango number;
-       
-       cursor resultado is
-         select cojos_id,color
-         from cojos;
-             
-        begin
-        
-           for color in resultado 
-             loop
-               select count(*) into cantENrango
-               from persona
-               where persona.cojos_id = color.cojos_id;
-               dbms_output.put_line(color.color||' = '|| cantENrango);
-             end loop;
-         end;
+       begin
+         open resultado for
+         select cpiel.nombre , count(*) 
+         from persona inner join cpiel
+         on persona.cpiel_id = cpiel.cpiel_id;
+       end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --
-       procedure count_cabello
+       procedure count_cabello(resultado out sys_refcursor)
          is
        
-       cantENrango number;
-       
-       cursor resultado is
-         select ccabello_id,nombre
-         from ccabello;
-             
-        begin
-        
-           for color in resultado 
-             loop
-               select count(*) into cantENrango
-               from persona
-               where persona.ccabello_id = color.ccabello_id;
-               dbms_output.put_line(color.nombre||' = '|| cantENrango);
-             end loop;
-         end;
+       begin
+         open resultado for
+         select ccabello.nombre , count(*) 
+         from persona inner join ccabello
+         on persona.ccabello_id = ccabello.ccabello_id;
+       end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --
-       procedure count_escolaridad
+       procedure count_escolaridad(resultado out sys_refcursor)
          is
        
-       cantENrango number;
-       
-       cursor resultado is
-         select escolaridad_id,nivel
-         from escolaridad;
-             
-        begin
-        
-           for nivel in resultado 
-             loop
-               select count(*) into cantENrango
-               from persona
-               where persona.escolaridad_id = nivel.escolaridad_id;
-               dbms_output.put_line(nivel.nivel||' = '|| cantENrango);
-             end loop;
-         end;
+       begin
+         open resultado for
+         select escolaridad.nivel, count(*) 
+         from persona inner join escolaridad
+         on persona.escolaridad_id = escolaridad.escolaridad_id;
+       end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --
-       procedure count_ocupacion
+       procedure count_ocupacion(resultado out sys_refcursor)
          is
        
-       cantENrango number;
-       
-       cursor resultado is
-         select ocupacion_id,nivel
-         from ocupacion;
-             
-        begin
-        
-           for nivel in resultado 
-             loop
-               select count(*) into cantENrango
-               from persona
-               where persona.ocupacion_id = nivel.ocupacion_id;
-               dbms_output.put_line(nivel.nivel||' = '|| cantENrango);
-             end loop;
-         end;
+       begin
+         open resultado for
+         select escolaridad.nivel, count(*) 
+         from persona inner join escolaridad
+         on persona.escolaridad_id = escolaridad.escolaridad_id;
+       end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --
-       procedure count_salario
+       procedure count_salario(resultado out sys_refcursor)
          is
        
-       cantENrango number;
-       
-       cursor resultado is
-         select salario_id, rango
-         from salario;
-             
-        begin
-        
-           for nivel in resultado 
-             loop
-               select count(*) into cantENrango
-               from persona
-               where persona.salario_id = nivel.salario_id;
-               dbms_output.put_line(nivel.rango||' = '|| cantENrango);
-             end loop;
-         end;
+       begin
+         open resultado for
+         select salario.rango, count(*) 
+         from persona inner join salario
+         on persona.salario_id = salario.salario_id;
+       end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --
        function count_afin_masc
         return number
@@ -406,15 +251,54 @@ create or replace package body estadisticas is
                 return vResult;
              end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --
-       --procedure count_idiomas;
+       procedure count_idiomas(resultado out sys_refcursor)
+         is
+       
+       begin
+         open resultado for
+         select idioma.nombre, count(*) 
+         from idioma_x_persona inner join idioma
+         on idioma_x_persona.idioma_id = idioma.idioma_id;
+       end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --
-       --procedure count_deportes;
+       procedure count_deportes(resultado out sys_refcursor)
+         is
+       
+       begin
+         open resultado for
+         select deporte.nombre, count(*) 
+         from deporte_x_persona inner join deporte
+         on deporte_x_persona.deporte_id = deporte.deporte_id;
+       end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --
-       --procedure count_recreativas;
+       procedure count_recreativas(resultado out sys_refcursor)
+         is
+       
+       begin
+         open resultado for
+         select actividad_recreativa.nombre, count(*) 
+         from actividad_x_persona inner join actividad_recreativa
+         on actividad_x_persona.actividad_recreativa_id = actividad_recreativa.actividad_recreativa_id;
+       end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --
-       --procedure count_hobbies;
+       procedure count_hobbies(resultado out sys_refcursor)
+         is
+       
+       begin
+         open resultado for
+         select hobbie.nombre, count(*) 
+         from hobbie_x_persona inner join hobbie
+         on hobbie_x_persona.hobbie_id = hobbie.hobbie_id;
+       end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --
-       --procedure count_vicios;
+       procedure count_vicios(resultado out sys_refcursor)
+         is
+       
+       begin
+         open resultado for
+         select vicio.nombre, count(*) 
+         from vicio_x_persona inner join vicio
+         on vicio_x_persona.vicio_id = vicio.vicio_id;
+       end;
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  -- -- -- -- --  -- -- -- -- --  -- -- -- -- --
 end estadisticas;
-/
