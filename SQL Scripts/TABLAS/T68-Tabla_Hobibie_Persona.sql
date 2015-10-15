@@ -1,0 +1,31 @@
+--TABLA: HOBBIE POR PERSONA
+
+
+/*
+Fecha: 12/09/2015
+Autor: Samantha Arburola
+DescripciOn: Tabla para almacenar los hobbie de una persona
+*/
+
+
+CREATE TABLE HOBBIE_x_PERSONA
+(
+       HOBBIE_ID NUMBER(6),
+       CONSTRAINT FK_HOBBIE FOREIGN KEY(HOBBIE_ID) REFERENCES HOBBIE(HOBBIE_ID),
+       
+       PERSONA_ID NUMBER(6),
+       CONSTRAINT FK_PERSONA_HxP FOREIGN KEY (PERSONA_ID) REFERENCES PERSONA(PERSONA_ID),
+       
+       CONSTRAINT PK_HOBBIE_x_PERSONA PRIMARY KEY (HOBBIE_ID, PERSONA_ID),
+       
+       FRECUENCIA_ID NUMBER(6),
+       CONSTRAINT FK_FRECUENCIA_HxP FOREIGN KEY (FRECUENCIA_ID) REFERENCES FRECUENCIA(FRECUENCIA_ID),
+       
+       -- Atributos de Auditoria
+       Fec_creacion 	  DATE,
+       Usuario_creacion   VARCHAR2(10),
+       Fec_ultima_modificacion     DATE,
+       Usuario_ultima_modificacion VARCHAR2(10)
+);
+
+COMMENT ON TABLE HOBBIE_x_PERSONA IS 'TABLA DE LOS HOBBIE DE UNA PERSONA';

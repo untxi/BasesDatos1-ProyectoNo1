@@ -1,0 +1,28 @@
+/*
+Fecha: 5/09/2015
+Autor: Samantha Arburola
+DescripciOn: Schema para el proyecto
+*/
+
+CREATE USER CB
+IDENTIFIED BY cb 
+DEFAULT TABLESPACE CB_Data 
+QUOTA 10M ON CB_Data 
+TEMPORARY TABLESPACE temp
+QUOTA 5M ON system;
+-----------------------------------
+CREATE ROLE CB
+IDENTIFIED BY cb;
+-----------------------------------
+GRANT CONNECT TO CB;
+-----------------------------------
+-- Give Permision login
+GRANT CREATE SESSION TO CB;
+GRANT CREATE TABLE TO CB;
+GRANT CREATE ANY INDEX TO CB;
+GRANT CREATE SEQUENCE TO CB;
+
+GRANT UNLIMITED TABLESPACE TO CB;
+GRANT CREATE VIEW TO CB;
+GRANT CREATE PROCEDURE TO CB;
+GRANT CREATE SYNONYM TO CB;

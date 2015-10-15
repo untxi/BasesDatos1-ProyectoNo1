@@ -1,0 +1,14 @@
+CREATE OR REPLACE FUNCTION get_MasMatch()
+       RETURN NUMBER
+       AS
+              vPersona NUMBER(9);
+       BEGIN 
+
+	 SELECT MAX(PERSONA_ID) FROM BITACORA_MATCH
+         WHERE BITACORA_MATCH.PERSONA_ID > AVG(PERSONA_ID);
+
+       RETURN vPersona;
+
+       END;
+       
+
