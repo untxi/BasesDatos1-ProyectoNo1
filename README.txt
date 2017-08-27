@@ -1,8 +1,13 @@
-Cor BessÛ - Prototipo
 
-README:
 
-	En la carpeta on del Zip:
-		abrir "index.html" y en este pulsar en cada uno de los "PASO","Bucal@" y "ADMINISTRAR SITIO"
+Tecnol√≥gico de Costa Rica
 
-=PAGINAS TOTALMENTE EN CONSTRUCCI”N HTML E INICIANDO DISE—O CSS=
+Escuela de Ingenier√≠a en Computaci√≥n
+
+Curso: Bases de Datos I
+
+Proyecto: Sitio para b√∫squeda de pareja
+
+Profesor: Adriana √Ålvarez
+
+Semestre II, 2015
